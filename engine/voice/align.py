@@ -61,15 +61,20 @@ def _load(lang: str = "vi"):
     if lang not in _MODELS:
         so = ort.SessionOptions()
         so.intra_op_num_threads = min(os.cpu_count() or 4, 8)
+        
+        # Tự động dùng GPU (CUDA) nếu có, fallback về CPU
+        available = ort.get_available_providers()
+        providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if "CUDAExecutionProvider" in available else ["CPUExecutionProvider"]
+        
         if lang == "en":
             from huggingface_hub import hf_hub_download
             model = hf_hub_download(EN_REPO, "onnx/model.onnx")
             vocab = json.loads(Path(hf_hub_download(EN_REPO, "vocab.json")).read_text(encoding="utf-8"))
-            sess = ort.InferenceSession(model, so, providers=["CPUExecutionProvider"])
+            sess = ort.InferenceSession(model, so, providers=providers)
             _MODELS[lang] = (vocab, sess, sess.get_inputs()[0].name, True, True)
         else:
             vocab = json.loads((MODEL_DIR / "vi_ctc.vocab.json").read_text(encoding="utf-8"))
-            sess = ort.InferenceSession(str(MODEL_DIR / "vi_ctc.onnx"), so, providers=["CPUExecutionProvider"])
+            sess = ort.InferenceSession(str(MODEL_DIR / "vi_ctc.onnx"), so, providers=providers)
             _MODELS[lang] = (vocab, sess, "audio", False, False)
     return _MODELS[lang]
 
