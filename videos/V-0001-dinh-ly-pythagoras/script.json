@@ -1,0 +1,94 @@
+{
+  "id": "V-0001",
+  "slug": "dinh-ly-pythagoras",
+  "title": "Định lý Pythagoras",
+  "subject": "TOÁN",
+  "voice": "Minh Quân Pro",
+  "format": "9:16",
+  "captions": "on",
+  "scenes": [
+    {
+      "heading": "Định lý Pythagoras",
+      "subheading": "Hình học 8",
+      "steps": [
+        {
+          "say": "Trong tam giác vuông, bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.",
+          "show": [
+            {
+              "id": "cong-thuc",
+              "math": "a^2 + b^2 = c^2"
+            }
+          ]
+        },
+        {
+          "say": "Với a và b là hai cạnh góc vuông, còn c là cạnh huyền.",
+          "show": [
+            {
+              "id": "chu-thich",
+              "rich": "Với $c$ là cạnh huyền, $a, b$ là cạnh góc vuông",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ví dụ áp dụng",
+      "subheading": "Tính cạnh huyền",
+      "steps": [
+        {
+          "say": "Cho tam giác vuông có hai cạnh góc vuông bằng ba và bốn. Tìm cạnh huyền c.",
+          "show": [
+            {
+              "id": "de-bai",
+              "math": "a = 3,\\; b = 4 \\implies c = ?"
+            }
+          ]
+        },
+        {
+          "say": "Áp dụng định lý, ta có c bình phương bằng ba bình phương cộng bốn bình phương.",
+          "show": [
+            {
+              "id": "tinh-toan-1",
+              "math": "c^2 = 3^2 + 4^2"
+            }
+          ]
+        },
+        {
+          "say": "Bằng chín cộng mười sáu, bằng hai mươi lăm.",
+          "show": [
+            {
+              "id": "tinh-toan-2",
+              "math": "c^2 = 9 + 16 = 25"
+            }
+          ]
+        },
+        {
+          "say": "Suy ra cạnh huyền c bằng căn bậc hai của hai mươi lăm, tức là bằng năm.",
+          "show": [
+            {
+              "id": "ket-qua",
+              "math": "c = \\sqrt{25} = 5",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ghi nhớ",
+      "steps": [
+        {
+          "say": "Bộ ba số 3, 4, 5 là bộ ba Pythagoras kinh điển cần nhớ.",
+          "show": [
+            {
+              "id": "nho",
+              "text": "Bộ ba số: (3, 4, 5)",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

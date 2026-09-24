@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phòng thu Aiducation</title>
+<style>
+  @font-face { font-family: "Be Vietnam Pro"; src: url(/fonts/BeVietnamPro-Regular.ttf); font-weight: 400; }
+  @font-face { font-family: "Be Vietnam Pro"; src: url(/fonts/BeVietnamPro-SemiBold.ttf); font-weight: 600; }
+  @font-face { font-family: "Be Vietnam Pro"; src: url(/fonts/BeVietnamPro-Bold.ttf); font-weight: 700; }
+  :root { --paper:#F5EFE2; --edge:#EBE3D1; --line:#DFD5C0; --ink:#1C1C1A; --muted:#57554E;
+          --faint:#A6A196; --jade:#1F6F5C; --jadesoft:#D3E3DA; --clay:#B4553A; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+         font:16px/1.5 "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { padding:20px 24px; border-bottom:2px solid var(--jade); display:flex; gap:16px;
+           align-items:baseline; flex-wrap:wrap; }
+  header h1 { margin:0; font-size:20px; color:var(--jade); }
+  header .progress { color:var(--muted); }
+  main { display:grid; grid-template-columns: 280px 1fr; min-height: calc(100vh - 70px); }
+  @media (max-width: 760px) { main { grid-template-columns: 1fr; } nav { max-height: 30vh; } }
+  nav { border-right:1px solid var(--line); overflow:auto; }
+  nav button { display:flex; gap:10px; width:100%; text-align:left; padding:10px 16px; border:0;
+               border-bottom:1px solid var(--line); background:none; font:inherit; cursor:pointer; color:var(--ink); }
+  nav button.on { background:var(--edge); }
+  .dot { width:10px; height:10px; border-radius:50%; margin-top:7px; flex:none; background:var(--line); }
+  .dot.ok { background:var(--jade); } .dot.listen { background:#C99A2E; } .dot.redo { background:var(--clay); }
+  nav .say { overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:14px; }
+  section { padding:32px clamp(16px, 5vw, 64px); display:flex; flex-direction:column; gap:24px; }
+  .num { color:var(--muted); font-size:14px; }
+  .prompt { font-size:clamp(24px, 3.4vw, 38px); line-height:1.5; font-weight:600; }
+  .prompt span { padding:0 4px; border-radius:6px; transition: color .08s, background .08s; }
+  .prompt span.past { color:var(--ink); } .prompt span.future { color:var(--faint); }
+  .prompt span.now { background:var(--jade); color:var(--paper); }
+  .prompt span.bad { background:var(--clay); color:var(--paper); }
+  .prompt span.warn { background:#F1DFB3; }
+  .controls { display:flex; gap:12px; flex-wrap:wrap; }
+  button.big { font:600 17px/1 inherit; font-family:inherit; padding:14px 22px; border-radius:10px;
+               border:2px solid var(--jade); background:var(--paper); color:var(--jade); cursor:pointer; }
+  button.big.primary { background:var(--jade); color:var(--paper); }
+  button.big.rec { background:var(--clay); border-color:var(--clay); color:var(--paper); }
+  button.big:disabled { opacity:.4; cursor:default; }
+  .msg { padding:14px 16px; border-radius:10px; background:var(--edge); }
+  .msg.ok { background:var(--jadesoft); } .msg.redo { background:#F3D9CF; }
+  .count { font-size:64px; font-weight:700; color:var(--clay); height:72px; }
+  footer { display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; margin-top:auto; }
+</style>
+</head>
+<body>
+<header><h1 id="title">Phòng thu</h1><span class="progress" id="progress"></span></header>
+<main>
+  <nav id="list"></nav>
+  <section>
+    <div class="num" id="num"></div>
+    <div class="prompt" id="prompt"></div>
+    <div class="count" id="count"></div>
+    <div class="controls">
+      <button class="big" id="listen">▶ Nghe mẫu</button>
+      <button class="big primary" id="rec">● Ghi âm</button>
+      <button class="big" id="play" disabled>▶ Nghe lại bản của tôi</button>
+    </div>
+    <div class="msg" id="msg">Chọn một câu, bấm “Ghi âm”, đọc theo chữ sáng lên. Bấm lần nữa để dừng.</div>
+    <footer>
+      <button class="big" id="prev">← Câu trước</button>
+      <button class="big" id="next">Câu tiếp →</button>
+      <button class="big primary" id="finish">Hoàn tất</button>
+    </footer>
+  </section>
+</main>
+<script>
+let lines = [], cur = 0, rec = null, chunks = [], karaokeTimer = null, stream = null;
+const $ = (id) => document.getElementById(id);
+
+async function load() {
+  const r = await fetch('/api/lines'); const d = await r.json();
+  lines = d.lines; $('title').textContent = 'Phòng thu — ' + d.title;
+  renderList(); show(cur);
+  if (lines.some(l => !l.guide)) setTimeout(load, 3000); // guides still being prepared
+}
+
+function renderList() {
+  $('list').innerHTML = '';
+  lines.forEach((l, i) => {
+    const b = document.createElement('button');
+    b.className = i === cur ? 'on' : '';
+    b.innerHTML = `<span class="dot ${l.result ? l.result.status : ''}"></span><span class="say">${i + 1}. ${l.say}</span>`;
+    b.onclick = () => { cur = i; renderList(); show(i); };
+    $('list').appendChild(b);
+  });
+  const done = lines.filter(l => l.result && l.result.status !== 'redo').length;
+  $('progress').textContent = `${done}/${lines.length} câu đã ổn`;
+}
+
+function words(l) { return l.say.split(/\s+/).filter(Boolean); }
+
+function show(i, marks) {
+  const l = lines[i];
+  $('num').textContent = `Câu ${i + 1} / ${lines.length}`;
+  const ws = words(l), bad = new Set((l.result && l.result.problem_words) || []);
+  $('prompt').innerHTML = ws.map((w, k) => {
+    let cls = marks ? marks(k) : 'past';
+    if (!marks && l.result && bad.has(w)) cls = l.result.status === 'redo' ? 'bad' : 'warn';
+    return `<span class="${cls}">${w}</span>`;
+  }).join(' ');
+  $('listen').disabled = !l.guide;
+  $('play').disabled = !l.result;
+  const r = l.result;
+  $('msg').className = 'msg ' + (r ? r.status : '');
+  $('msg').textContent = !r ? 'Chưa ghi âm câu này.'
+    : r.status === 'ok' ? 'Tốt! Câu này dùng được. Sang câu tiếp.'
+    : r.status === 'listen' ? `Tạm được — hãy nghe lại các chữ tô vàng (${r.problem_words.join(', ')}). Ghi lại nếu chưa rõ.`
+    : `Chưa khớp kịch bản ở chữ tô đỏ (${r.problem_words.join(', ')}). Vui lòng ghi âm lại câu này.`;
+}
+
+function karaoke(l, startMs) {
+  // Light words up at the sample reading's pace (from the local aligner).
+  const g = l.guide; if (!g) return;
+  const ws = words(l);
+  clearInterval(karaokeTimer);
+  karaokeTimer = setInterval(() => {
+    const t = (performance.now() - startMs) / 1000;
+    show(cur, (k) => {
+      const w = g[Math.min(k, g.length - 1)];
+      return t >= w.end ? 'past' : t >= w.start ? 'now' : 'future';
+    });
+  }, 40);
+}
+
+$('listen').onclick = () => {
+  const a = new Audio(`/api/guide/${lines[cur].key}.wav`);
+  a.onplay = () => karaoke(lines[cur], performance.now());
+  a.onended = () => { clearInterval(karaokeTimer); show(cur); };
+  a.play();
+};
+
+$('play').onclick = () => new Audio(`/api/take/${lines[cur].key}.wav?${Date.now()}`).play();
+
+$('rec').onclick = async () => {
+  if (rec && rec.state === 'recording') { rec.stop(); return; }
+  try {
+    stream = stream || await navigator.mediaDevices.getUserMedia({ audio: {
+      echoCancellation: false, noiseSuppression: true, autoGainControl: true } });
+  } catch (e) { $('msg').textContent = 'Không mở được micro. Hãy cho phép trình duyệt dùng micro rồi thử lại.'; return; }
+  for (const n of [3, 2, 1]) { $('count').textContent = n; await new Promise(r => setTimeout(r, 600)); }
+  $('count').textContent = '';
+  const type = MediaRecorder.isTypeSupported('audio/webm') ? 'audio/webm' : 'audio/mp4';
+  rec = new MediaRecorder(stream, { mimeType: type }); chunks = [];
+  rec.ondataavailable = (e) => chunks.push(e.data);
+  rec.onstop = async () => {
+    clearInterval(karaokeTimer);
+    $('rec').textContent = '● Ghi âm'; $('rec').className = 'big primary';
+    $('msg').className = 'msg'; $('msg').textContent = 'Đang kiểm tra bản ghi…';
+    const blob = new Blob(chunks, { type });
+    const r = await fetch(`/api/take/${lines[cur].key}`, { method: 'POST', headers: { 'Content-Type': type }, body: blob });
+    lines[cur].result = await r.json();
+    renderList(); show(cur);
+  };
+  rec.start();
+  $('rec').textContent = '■ Dừng'; $('rec').className = 'big rec';
+  karaoke(lines[cur], performance.now());
+};
+
+$('prev').onclick = () => { cur = Math.max(0, cur - 1); renderList(); show(cur); };
+$('next').onclick = () => { cur = Math.min(lines.length - 1, cur + 1); renderList(); show(cur); };
+$('finish').onclick = async () => {
+  $('msg').textContent = 'Đang lưu…';
+  const r = await (await fetch('/api/finish', { method: 'POST' })).json();
+  $('msg').className = 'msg ' + (r.ok ? 'ok' : 'redo');
+  $('msg').textContent = r.ok
+    ? 'Xong! Đã lưu giọng đọc. Quay lại cửa sổ trò chuyện với AI và nói “ghi âm xong”.'
+    : `Còn ${r.remaining.length} câu chưa đạt. Phòng thu đã đóng — nói với AI để mở lại.`;
+};
+
+load();
+</script>
+</body>
+</html>

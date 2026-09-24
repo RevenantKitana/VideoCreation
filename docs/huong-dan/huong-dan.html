@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>Xưởng TikTok Aiducation — Hướng dẫn sử dụng</title>
+<style>
+  @font-face { font-family: "BVP"; src: url("../../assets/fonts/BeVietnamPro-Regular.ttf"); font-weight: 400; }
+  @font-face { font-family: "BVP"; src: url("../../assets/fonts/BeVietnamPro-SemiBold.ttf"); font-weight: 600; }
+  @font-face { font-family: "BVP"; src: url("../../assets/fonts/BeVietnamPro-Bold.ttf"); font-weight: 700; }
+
+  :root {
+    --paper: #F5EFE2; --edge: #EBE3D1; --line: #DFD5C0;
+    --ink: #1C1C1A; --muted: #57554E; --faint: #A6A196;
+    --jade: #1F6F5C; --jadesoft: #D3E3DA; --jadedeep: #14503F; --clay: #B4553A;
+  }
+  @page { size: A4; margin: 0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--paper); color: var(--ink);
+    font-family: "BVP", sans-serif; font-size: 10.6pt; line-height: 1.55;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  .page { width: 210mm; height: 297mm; padding: 18mm 18mm 16mm; position: relative;
+    page-break-after: always; overflow: hidden; background: var(--paper); }
+  .page:last-child { page-break-after: auto; }
+
+  /* brand rule with the square bug, as in the videos */
+  .rule { position: relative; height: 2.2pt; background: var(--jade); margin: 0 0 9mm; }
+  .rule::before { content: ""; position: absolute; left: 0; top: -3.3pt; width: 8.8pt; height: 8.8pt; background: var(--jade); }
+  .mark { position: absolute; top: 9mm; right: 18mm; font-weight: 700; font-size: 7.5pt;
+    letter-spacing: 1.2pt; color: var(--muted); }
+  .mark b { color: var(--jade); }
+  .foot { position: absolute; bottom: 9mm; left: 18mm; right: 18mm; display: flex;
+    justify-content: space-between; font-size: 7.5pt; color: var(--faint); }
+
+  h1 { font-weight: 700; color: var(--jade); font-size: 30pt; line-height: 1.12; margin: 0 0 4mm; letter-spacing: -0.3pt; }
+  h2 { font-weight: 700; color: var(--jade); font-size: 19pt; line-height: 1.2; margin: 0 0 2mm; }
+  h3 { font-weight: 600; color: var(--ink); font-size: 11.5pt; margin: 5mm 0 1.5mm; }
+  .lede { font-size: 12pt; color: var(--muted); margin: 0 0 7mm; max-width: 150mm; }
+  p { margin: 0 0 2.5mm; }
+  b, strong { font-weight: 600; }
+  .muted { color: var(--muted); }
+  .small { font-size: 8.8pt; }
+
+  .card { background: var(--edge); border-radius: 3mm; padding: 5mm 6mm; margin: 0 0 4mm; }
+  .card.jade { background: var(--jadesoft); }
+  .card.warn { background: #F3E2DA; }
+  .card.warn .tag { color: var(--clay); }
+  .tag { font-weight: 700; font-size: 7.5pt; letter-spacing: 1pt; text-transform: uppercase; color: var(--jade); margin-bottom: 1.5mm; }
+
+  .steps { counter-reset: s; margin: 0; padding: 0; list-style: none; }
+  .steps > li { counter-increment: s; position: relative; padding: 0 0 var(--gap, 4.5mm) 13mm; }
+  .steps > li::before { content: counter(s); position: absolute; left: 0; top: -0.6mm;
+    width: 8.5mm; height: 8.5mm; border-radius: 50%; background: var(--jade); color: var(--paper);
+    font-weight: 700; font-size: 11pt; display: flex; align-items: center; justify-content: center; }
+  .steps > li:not(:last-child)::after { content: ""; position: absolute; left: 4.1mm; top: 9mm; bottom: 0.5mm;
+    width: 0.4mm; background: var(--line); }
+  .steps b.t { display: block; font-size: 11.3pt; margin-bottom: 0.8mm; }
+
+  .say { display: inline-block; background: var(--paper); border: 0.35mm solid var(--line);
+    border-radius: 2mm; padding: 0.6mm 2.4mm; font-weight: 600; color: var(--jadedeep); }
+  .card .say { background: #FBF8F1; }
+  code, .path { font-family: "BVP", sans-serif; font-weight: 600; background: var(--edge); border-radius: 1.2mm; padding: 0 1.5mm; color: var(--jadedeep); }
+
+  table { width: 100%; border-collapse: collapse; margin: 1mm 0 3mm; }
+  th { text-align: left; font-weight: 700; font-size: 8pt; letter-spacing: 0.6pt; text-transform: uppercase;
+    color: var(--jade); border-bottom: 0.5mm solid var(--jade); padding: 1.8mm 2mm; }
+  td { border-bottom: 0.3mm solid var(--line); padding: 2.2mm 2mm; vertical-align: top; }
+  td:first-child { width: 42%; }
+
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .grid3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm; }
+
+  /* cover */
+  .cover { padding-top: 26mm; }
+  .cover h1 { font-size: 40pt; margin-bottom: 5mm; }
+  .phones { display: flex; gap: 8mm; margin: 9mm 0 8mm; }
+  .phone { width: 52mm; border-radius: 6mm; background: var(--ink); padding: 2.2mm; box-shadow: 1.2mm 1.5mm 0 rgba(28,28,26,.08); }
+  .phone img { display: block; width: 100%; border-radius: 4.2mm; }
+  .phone + .cap { }
+  .flow { display: flex; align-items: stretch; gap: 2.5mm; margin-top: 2mm; }
+  .flow div { flex: 1; background: var(--edge); border-radius: 2.5mm; padding: 3mm 3mm; font-size: 8.8pt; line-height: 1.35; }
+  .flow div b { display: block; color: var(--jade); font-size: 9.6pt; margin-bottom: .6mm; }
+  .arrow { flex: 0 0 auto !important; background: none !important; padding: 0 !important; color: var(--jade);
+    display: flex; align-items: center; font-weight: 700; font-size: 13pt; }
+
+  .chat { display: flex; flex-direction: column; gap: 2.4mm; }
+  .bubble { max-width: 82%; padding: 2.6mm 4mm; border-radius: 3.5mm; font-size: 9.8pt; line-height: 1.45; }
+  .me { align-self: flex-end; background: var(--jade); color: var(--paper); border-bottom-right-radius: 1mm; }
+  .ai { align-self: flex-start; background: var(--edge); border-bottom-left-radius: 1mm; }
+  .who { font-size: 7pt; font-weight: 700; letter-spacing: .8pt; text-transform: uppercase; opacity: .7; margin-bottom: .6mm; }
+
+  .shot { border-radius: 2.5mm; overflow: hidden; border: 0.35mm solid var(--line); }
+  .shot img { display: block; width: 100%; }
+  .check li { margin-bottom: 1.4mm; }
+  ul { margin: 0; padding-left: 5mm; }
+</style>
+</head>
+<body>
+
+<!-- ============================================================ 1. COVER -->
+<section class="page cover">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h1>Xưởng TikTok<br>Aiducation</h1>
+  <p class="lede">Hướng dẫn sử dụng cho nhân viên. Bạn chỉ cần trò chuyện với trợ lý AI bằng tiếng Việt —
+    AI sẽ viết kịch bản, dựng video bài giảng, đọc lời, và giúp bạn đọc số liệu TikTok mỗi ngày.</p>
+
+  <div class="phones">
+    <div><div class="phone"><img src="../../vi-du/01-toan-12-dau-dao-ham-tiktok/cover.png"></div>
+      <p class="small muted" style="margin-top:2mm">Toán 12 — Xét dấu đạo hàm</p></div>
+    <div><div class="phone"><img src="img/frame-graph.png"></div>
+      <p class="small muted" style="margin-top:2mm">Vật lý 9 — Định luật Ôm</p></div>
+    <div style="flex:1; display:flex; flex-direction:column; justify-content:center; gap:3mm">
+      <div class="card jade" style="margin:0"><div class="tag">Không cần kỹ thuật</div>
+        Bạn không gõ lệnh, không sửa file. Chỉ nói chuyện với AI, xem hình duyệt, và đăng video.</div>
+      <div class="card" style="margin:0"><div class="tag">Chạy ngay trên máy bạn</div>
+        Không cần tài khoản giọng đọc hay mã API. Mọi thứ nằm trong một thư mục.</div>
+    </div>
+  </div>
+
+  <h3 style="margin-top:0">Một vòng làm việc</h3>
+  <div class="flow">
+    <div><b>1. Nói ý tưởng</b>“Làm video về định luật Ôm lớp 9”</div><div class="arrow">→</div>
+    <div><b>2. Duyệt hình</b>AI gửi ảnh xem trước, bạn nói “ok”</div><div class="arrow">→</div>
+    <div><b>3. Nhận video</b>final.mp4, ảnh bìa, caption</div><div class="arrow">→</div>
+    <div><b>4. Đăng & gửi số liệu</b>chụp màn hình sau 1, 2, 7 ngày</div>
+  </div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>1</span></div>
+</section>
+
+<!-- ============================================================ 2. SETUP -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Cài đặt lần đầu</h2>
+  <p class="lede">Làm một lần trên mỗi máy, khoảng 15–30 phút. Cần có mạng trong lúc cài.</p>
+
+  <div class="grid2" style="margin-bottom:4mm">
+    <div class="card" style="margin:0"><div class="tag">Máy cần có</div>
+      <ul class="check">
+        <li>Windows 10/11 (64-bit) hoặc macOS 13 trở lên</li>
+        <li>RAM từ 8 GB (16 GB càng tốt)</li>
+        <li>Ổ đĩa trống ít nhất <b>8 GB</b></li>
+        <li>Micro hoặc tai nghe có mic (nếu tự đọc)</li>
+      </ul></div>
+    <div class="card" style="margin:0"><div class="tag">Ứng dụng AI (chọn một)</div>
+      <ul class="check">
+        <li><b>Claude</b> — ứng dụng máy tính, tab <b>Code</b></li>
+        <li><b>ChatGPT</b> — ứng dụng máy tính, phần <b>Codex</b></li>
+        <li><b>Google Antigravity</b></li>
+      </ul>
+      <p class="small muted" style="margin:1.5mm 0 0">Ứng dụng phải được phép làm việc với thư mục trên máy.</p></div>
+  </div>
+
+  <ol class="steps">
+    <li><b class="t">Tải file zip và giải nén vào đúng chỗ</b>
+      <div class="grid2">
+        <div><b>Windows:</b> giải nén thành <span class="path">C:\Aiducation\xuong-tiktok</span></div>
+        <div><b>Mac:</b> giải nén vào thư mục người dùng: <span class="path">~/Aiducation/xuong-tiktok</span></div>
+      </div>
+      <p class="small muted" style="margin-top:1.5mm">Đường dẫn chỉ nên có chữ không dấu, không khoảng trắng. <b>Không</b> để trong
+        OneDrive, iCloud, Google Drive, Desktop hay Documents đang đồng bộ — thư mục sẽ lớn tới vài GB.</p></li>
+    <li><b class="t">Mở thư mục trong ứng dụng AI</b>
+      Claude: tab Code → chọn thư mục. ChatGPT: Codex → chọn thư mục làm việc. Antigravity: Open Folder.</li>
+    <li><b class="t">Nhờ AI cài đặt</b>
+      Gõ: <span class="say">Cài đặt xưởng TikTok giúp em.</span><br>
+      AI sẽ tự tải công cụ, giọng đọc và kiểm tra máy. Nếu ứng dụng hỏi “cho phép chạy lệnh?”, chọn <b>Cho phép</b>.</li>
+    <li><b class="t">Chờ chữ “READY”</b>
+      Khi AI báo máy đã sẵn sàng là xong. Từ lần sau, mở thư mục là làm việc được ngay, không cần mạng.
+      Mỗi lần mở, AI sẽ <b>giới thiệu các kiểu video</b> xưởng làm được, và lần đầu tự mở <b>trang video mẫu</b>
+      trên trình duyệt. Muốn xem lại: <span class="say">Cho chị xem video mẫu</span>.</li>
+  </ol>
+
+  <div class="card warn"><div class="tag">Đừng làm</div>
+    Đừng xoá, đổi tên hay di chuyển các thư mục bên trong (<span class="path">engine</span>, <span class="path">models</span>, <span class="path">.pixi</span>…).
+    Đừng tự thêm mã API hay tài khoản dịch vụ nào — xưởng không cần và không được dùng.</div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>2</span></div>
+</section>
+
+<!-- ============================================================ 3. MAKE A VIDEO -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Làm một video</h2>
+  <p class="lede">Mỗi video mất khoảng 10–15 phút, phần lớn là máy tự chạy. Bạn duyệt ở hai chỗ.</p>
+
+  <div class="grid2" style="grid-template-columns: 1.15fr 0.85fr; gap:7mm">
+    <div class="chat">
+      <div class="bubble me"><div class="who">Bạn</div>Làm video TikTok về định luật Ôm lớp 9. Bài ví dụ: R = 12 Ω, U = 6 V, tính I.</div>
+      <div class="bubble ai"><div class="who">AI</div>Em làm bài này, đáp án I = 0,5 A, giọng Minh Quân. Em thêm đồ thị I theo U nhé. Đây là hình xem trước — chị xem được chưa?</div>
+      <div class="bubble me"><div class="who">Bạn</div>Ok, làm tiếp đi.</div>
+      <div class="bubble ai"><div class="who">AI</div>Giọng đọc đạt 12/12 câu. Đang xuất video (~5 phút)… Xong! File <b>final.mp4</b>, ảnh bìa <b>cover.png</b> và caption đã lưu sẵn.</div>
+    </div>
+    <div>
+      <div class="shot"><img src="img/preview-crop.png"></div>
+      <p class="small muted" style="margin-top:1.5mm">Ảnh xem trước: mỗi ô là một bước trong video. AI gửi cả trang như thế này để bạn duyệt.</p>
+    </div>
+  </div>
+
+  <h3>Bạn cần làm gì</h3>
+  <ol class="steps" style="--gap:3mm">
+    <li><b class="t">Nói rõ đề bài</b>Môn, lớp, và bài tập cụ thể (chụp ảnh sách cũng được). Có đáp án thì gửi kèm.</li>
+    <li><b class="t">Xem ảnh xem trước thật kỹ</b>Công thức có đúng không? Chữ có bị tràn, chồng lên nhau không? Nói AI sửa chỗ nào chưa ổn.</li>
+    <li><b class="t">Chọn giọng</b>Mặc định là <b>Minh Quân</b> (nam). Muốn giọng nữ: <span class="say">dùng giọng Trúc Ly</span>. Câu tiếng Anh có giọng Anh/Mỹ bản xứ: <span class="say">đọc câu tiếng Anh bằng giọng Anh</span>. Muốn tự đọc: xem trang 5.</li>
+    <li><b class="t">Nhận video</b>Video nằm trong thư mục <span class="path">videos</span>. Xem hết một lượt trước khi đăng.</li>
+  </ol>
+
+  <div class="card jade"><div class="tag">Luôn kiểm tra kiến thức</div>
+    AI tự giải bài trước khi làm video, nhưng bạn là người chịu trách nhiệm cuối cùng. Một video sai kiến thức gây hại hơn không có video.</div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>3</span></div>
+</section>
+
+<!-- ============================================================ 3b. DECK -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Làm video từ slide (PDF)</h2>
+  <p class="lede">Có sẵn bài giảng dạng slide? Gửi file PDF — AI viết lời giảng và cho từng phần của slide
+    xuất hiện đúng lúc được nhắc tới. Video ngang 16:9, dùng cho app hoặc YouTube.</p>
+
+  <div class="grid2" style="margin-bottom:4mm">
+    <div><div class="shot"><img src="img/deck-marks.png"></div>
+      <p class="small muted" style="margin-top:1.5mm">AI đánh số từng phần trên slide để chọn thứ tự xuất hiện.</p></div>
+    <div><div class="shot"><img src="img/deck-hoa10.png"></div>
+      <p class="small muted" style="margin-top:1.5mm">Video thành phẩm: hình hiện dần theo lời giảng, có phụ đề chạy chữ.</p></div>
+  </div>
+
+  <ol class="steps" style="--gap:3.2mm">
+    <li><b class="t">Xuất slide ra PDF</b>
+      PowerPoint: <b>Tệp → Xuất → PDF</b>. Canva: <b>Chia sẻ → Tải xuống → PDF Chuẩn</b>. Google Slides: <b>Tệp → Tải xuống → PDF</b>.</li>
+    <li><b class="t">Gửi cho AI</b>
+      Kéo file vào cửa sổ AI và nói: <span class="say">Làm video từ slide này, Hóa 10</span>. Có đáp án hay ghi chú bài giảng thì gửi kèm.</li>
+    <li><b class="t">Duyệt ảnh xem trước</b>
+      Mỗi ô là một câu giảng. Kiểm tra kiến thức và thứ tự xuất hiện, rồi nói “ok”.</li>
+    <li><b class="t">Nhận video</b>
+      Xuất rất nhanh (khoảng 1–2 phút). Muốn hội thoại thầy – trò: <span class="say">dùng hai giọng, thầy và trò</span>.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card" style="margin:0"><div class="tag">Chính xác nhất</div>
+      PDF <b>xuất trực tiếp</b> từ phần mềm làm slide. Slide chỉ là ảnh chụp vẫn làm được, nhưng AI phải
+      tự cắt từng hình nên chậm và kém chính xác hơn.</div>
+    <div class="card jade" style="margin:0"><div class="tag">Ảnh của bạn</div>
+      Gửi ảnh để làm nền hoặc minh họa (có thể tạo bằng ChatGPT/Gemini).
+      Ảnh <b>không được có chữ</b> — chữ tiếng Việt do máy tự viết lên.</div>
+  </div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>4</span></div>
+</section>
+
+<!-- ============================================================ 4. RECORD YOUR VOICE -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Tự đọc bằng giọng của bạn</h2>
+  <p class="lede">Nói với AI: <span class="say">Em muốn tự đọc video này.</span> AI sẽ mở trang <b>Phòng thu</b> trên trình duyệt.</p>
+
+  <div class="shot" style="margin-bottom:5mm"><img src="img/studio-crop.png"></div>
+
+  <ol class="steps">
+    <li><b class="t">Cho phép micro</b>Lần đầu trình duyệt hỏi quyền dùng micro — bấm <b>Cho phép</b>.</li>
+    <li><b class="t">Nghe mẫu (tuỳ chọn)</b>Bấm <b>▶ Nghe mẫu</b> để nghe cách đọc và tốc độ gợi ý.</li>
+    <li><b class="t">Ghi âm từng câu</b>Bấm <b>● Ghi âm</b>, đếm 3–2–1, đọc theo chữ sáng lên. Bấm <b>■ Dừng</b> khi đọc xong.</li>
+    <li><b class="t">Xem kết quả</b>
+      <span style="color:var(--jade);font-weight:600">Xanh</span>: đạt. &nbsp;
+      <span style="color:#A67C12;font-weight:600">Vàng</span>: nghe lại chữ được tô. &nbsp;
+      <span style="color:var(--clay);font-weight:600">Đỏ</span>: đọc thiếu/sai chữ — ghi lại câu đó.</li>
+    <li><b class="t">Bấm “Hoàn tất”</b>Rồi quay lại cửa sổ AI và nói <span class="say">ghi âm xong</span>.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card"><div class="tag">Mẹo thu âm</div>
+      Phòng yên tĩnh, tắt quạt/điều hoà nếu được. Dùng tai nghe có mic. Đọc tự nhiên như đang giảng —
+      không cần khớp tốc độ mẫu, video tự căn theo giọng bạn.</div>
+    <div class="card"><div class="tag">AI đọc bằng giọng bạn</div>
+      Muốn AI đọc thay nhưng bằng giọng của bạn? Nói <span class="say">tạo giọng của em</span>.
+      Cần khoảng 10 giây ghi âm rõ và <b>ký giấy đồng ý</b> trước khi dùng — xem trang 6.</div>
+  </div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>5</span></div>
+</section>
+
+<!-- ============================================================ 5b. CLONE -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Nhân bản giọng của bạn</h2>
+  <p class="lede">AI đọc lời bằng chính giọng của bạn — không cần tự thu từng câu. Chỉ cần ghi âm
+    một lần, khoảng 10 giây. Giọng được lưu và xử lý ngay trên máy công ty.</p>
+
+  <ol class="steps" style="--gap:3.6mm">
+    <li><b class="t">Thu một đoạn ngắn</b>
+      Dùng ứng dụng Ghi âm trên điện thoại (hoặc máy tính). Phòng yên tĩnh, không nhạc nền, đọc tự nhiên
+      như đang giảng, khoảng 10 giây. Ví dụ: <span class="say">Xin chào các em, hôm nay cô sẽ hướng dẫn các em giải một dạng bài quen thuộc trong đề thi.</span></li>
+    <li><b class="t">Gửi file cho AI</b>
+      Kéo file ghi âm vào cửa sổ AI và nói: <span class="say">Tạo giọng của em từ file này, tên là co-lan</span>.
+      Tên viết không dấu, không khoảng trắng.</li>
+    <li><b class="t">Nghe thử</b>
+      AI đọc một câu mẫu bằng giọng mới và lưu ở <span class="path">voices/co-lan/test.wav</span>. Mở nghe:
+      chưa giống thì thu lại đoạn khác rõ hơn.</li>
+    <li><b class="t">Ký giấy đồng ý</b>
+      Mở <span class="path">voices/co-lan/consent.md</span>, điền <b>họ và tên</b> và <b>ngày</b>. Chưa ký thì máy
+      <b>không cho xuất video</b> bằng giọng này.</li>
+    <li><b class="t">Dùng giọng</b>
+      <span class="say">Làm video này bằng giọng của cô Lan</span>. Có thể dùng cho cả hội thoại: thầy một giọng, trò một giọng.</li>
+  </ol>
+
+  <div class="grid2">
+    <div class="card warn" style="margin:0"><div class="tag">Chỉ giọng của chính mình</div>
+      Chỉ nhân bản giọng của người <b>đã đồng ý và ký</b>. Không nhân bản giọng người khác,
+      người nổi tiếng hay học sinh. Muốn rút lại: báo quản lý để xoá thư mục giọng.</div>
+    <div class="card" style="margin:0"><div class="tag">Lưu ý</div>
+      Giọng nhân bản đọc <b>tiếng Việt</b>. Câu tiếng Anh dùng giọng Anh/Mỹ có sẵn.
+      Bản ghi càng sạch (không vang, không ồn) thì giọng càng giống.</div>
+  </div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>6</span></div>
+</section>
+
+<!-- ============================================================ 5. POST + METRICS -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Đăng video và gửi số liệu</h2>
+  <p class="lede">Số liệu mỗi ngày giúp AI biết kiểu video nào hiệu quả để làm tiếp.</p>
+
+  <h3 style="margin-top:0">Khi đăng</h3>
+  <ol class="steps">
+    <li><b class="t">Đăng final.mp4 lên TikTok</b>Chọn ảnh bìa từ <span class="path">cover.png</span>, dán caption AI gợi ý. Bật <b>Cho phép lưu video</b>.</li>
+    <li><b class="t">Gửi link cho AI</b><span class="say">Đăng rồi nhé, link đây: …</span> — AI ghi lại giờ đăng.</li>
+  </ol>
+
+  <h3>Sau 1 ngày, 2 ngày và 7 ngày</h3>
+  <p>Mỗi sáng nói <span class="say">Hôm nay cần số liệu gì?</span> — AI sẽ báo video nào đến hạn.
+    Mở TikTok → <b>Hồ sơ</b> → ☰ → <b>TikTok Studio</b> → <b>Phân tích</b> → chọn video, chụp:</p>
+
+  <table>
+    <tr><th>Màn hình cần chụp</th><th>Vì sao</th></tr>
+    <tr><td><b>Tổng quan</b> — phần trên cùng (lượt xem, thích, bình luận, chia sẻ, lưu)</td><td>Video có hay không, người xem có lưu lại để học không</td></tr>
+    <tr><td><b>Tỷ lệ giữ chân người xem</b> (biểu đồ) + thời gian xem trung bình</td><td>3 giây đầu có giữ được người xem không, xem hết không</td></tr>
+    <tr><td><b>Nguồn lưu lượng truy cập</b> + <b>Cụm từ tìm kiếm</b></td><td>TikTok có đẩy video lên “Dành cho bạn” không, học sinh tìm bằng từ gì</td></tr>
+    <tr><td><b>Người xem</b> — mới / quay lại</td><td>Kênh có đang giữ chân người theo dõi không</td></tr>
+  </table>
+
+  <p>Gửi ảnh vào cửa sổ AI kèm câu: <span class="say">Số liệu video đạo hàm, 48 giờ</span>. AI đọc số, kiểm tra, lưu lại,
+    so với các video trước và đề xuất kế hoạch ngày mai để bạn duyệt.</p>
+
+  <div class="card jade"><div class="tag">Đừng vội kết luận</div>
+    Một video là may rủi. AI chỉ rút ra quy luật khi có khoảng 5 video cùng kiểu trở lên — và luôn so video 2 ngày với video 2 ngày.</div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>7</span></div>
+</section>
+
+<!-- ============================================================ 6. PHRASEBOOK -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Nói gì với AI</h2>
+  <p class="lede">Không cần đúng từng chữ — nói tự nhiên là AI hiểu. Đây là những câu hay dùng.</p>
+
+  <table>
+    <tr><th>Bạn muốn</th><th>Nói với AI</th></tr>
+    <tr><td>Bắt đầu buổi làm việc</td><td><span class="say">Chào em, hôm nay làm gì?</span></td></tr>
+    <tr><td>Xem xưởng làm được gì</td><td><span class="say">Cho chị xem video mẫu</span></td></tr>
+    <tr><td>Dùng giọng của mình</td><td><span class="say">Tạo giọng của em từ file này</span></td></tr>
+    <tr><td>Đặt mục tiêu cho kênh</td><td><span class="say">Mục tiêu là 5.000 follower trong 2 tháng</span></td></tr>
+    <tr><td>Làm video mới</td><td><span class="say">Làm video về hằng đẳng thức lớp 8</span></td></tr>
+    <tr><td>Sửa hình xem trước</td><td><span class="say">Công thức thứ hai sai dấu, sửa lại</span></td></tr>
+    <tr><td>Đổi giọng</td><td><span class="say">Dùng giọng Trúc Ly</span> · <span class="say">Em tự đọc</span></td></tr>
+    <tr><td>Nghe lại một câu</td><td><span class="say">Cho chị nghe câu số 5</span></td></tr>
+    <tr><td>Biết video nào đang dở</td><td><span class="say">Các video đang ở bước nào?</span></td></tr>
+    <tr><td>Báo đã đăng</td><td><span class="say">Đăng rồi, link đây: …</span></td></tr>
+    <tr><td>Gửi số liệu</td><td><span class="say">Số liệu hôm qua đây</span> + ảnh chụp</td></tr>
+    <tr><td>Xem tổng kết</td><td><span class="say">Tuần này kênh thế nào?</span></td></tr>
+    <tr><td>Kế hoạch ngày mai</td><td><span class="say">Mai nên làm video gì?</span></td></tr>
+    <tr><td>Khi có lỗi</td><td><span class="say">Bị lỗi rồi, em xem giúp</span></td></tr>
+  </table>
+
+  <div class="card"><div class="tag">Mẹo</div>
+    Gửi càng cụ thể càng tốt: môn, lớp, bài tập, đáp án. Ảnh chụp trang sách hay đề thi đều dùng được.</div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>8</span></div>
+</section>
+
+<!-- ============================================================ 7. TROUBLE + RULES -->
+<section class="page">
+  <div class="mark"><b>AIDUCATION</b> · TIKTOK</div>
+  <div class="rule"></div>
+  <h2>Khi gặp sự cố</h2>
+  <p class="lede">Luôn nói với AI trước — nó tự sửa được hầu hết lỗi. Bảng dưới là những việc chỉ bạn làm được.</p>
+
+  <table>
+    <tr><th>Hiện tượng</th><th>Bạn làm</th></tr>
+    <tr><td>AI hỏi “cho phép chạy lệnh?”</td><td>Chọn <b>Cho phép</b>. Đó là cách AI làm video trên máy bạn.</td></tr>
+    <tr><td>Phòng thu báo không mở được micro</td><td>Bấm biểu tượng ổ khoá cạnh địa chỉ trang → Micro → Cho phép → tải lại trang.</td></tr>
+    <tr><td>Xuất video rất lâu</td><td>Bình thường với máy yếu (khoảng 1 phút cho 10 giây video). Cắm sạc, không cho máy ngủ, đừng xuất 2 video cùng lúc.</td></tr>
+    <tr><td>AI báo máy “NOT READY”</td><td>Kết nối mạng rồi nói <span class="say">cài đặt lại giúp em</span>.</td></tr>
+    <tr><td>AI báo thiếu “aligner model”</td><td>File zip bị thiếu phần. Xin lại file zip đầy đủ từ quản lý.</td></tr>
+    <tr><td>Hết dung lượng ổ đĩa</td><td>Nhờ AI xoá các thư mục <span class="path">build</span> của video đã đăng (video gốc vẫn giữ).</td></tr>
+  </table>
+
+  <h3>Nguyên tắc chung</h3>
+  <div class="grid2">
+    <div class="card" style="margin:0"><div class="tag">Luôn</div>
+      <ul class="check">
+        <li>Kiểm tra kiến thức trước khi đăng</li>
+        <li>Xem hết video một lượt</li>
+        <li>Gửi số liệu đúng hạn 1 – 2 – 7 ngày</li>
+        <li>Để AI ghi lại mọi video đã đăng</li>
+      </ul></div>
+    <div class="card warn" style="margin:0"><div class="tag">Không bao giờ</div>
+      <ul class="check">
+        <li>Dùng giọng của người khác khi chưa có giấy đồng ý</li>
+        <li>Thêm mã API, tài khoản dịch vụ trả phí</li>
+        <li>Nêu tên đối thủ, bịa số liệu, hứa “đoán đề”</li>
+        <li>Đưa tên hay mặt học sinh vào video</li>
+      </ul></div>
+  </div>
+
+  <div class="card jade" style="margin-top:5mm"><div class="tag">Cần hỗ trợ thêm</div>
+    Liên hệ quản lý dự án TikTok của Aiducation. Khi báo lỗi, gửi kèm ảnh chụp cửa sổ AI.</div>
+
+  <div class="foot"><span>Aiducation · Tài liệu nội bộ</span><span>9</span></div>
+</section>
+
+</body>
+</html>

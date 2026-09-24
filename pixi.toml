@@ -1,0 +1,37 @@
+# The whole toolchain, installed INTO this folder (.pixi/). Same recipe on Windows,
+# Intel Mac and Apple-silicon Mac. Nothing is installed system-wide, no admin rights,
+# no Homebrew, no LaTeX, no API keys.
+#
+#   setup:   setup/setup-mac.command  or  setup\setup-windows.bat   (once per laptop)
+#   use:     ./os <verb>   (Mac)       os.cmd <verb>  (Windows)
+
+[workspace]
+name = "aiducation-tiktok-production-os"
+channels = ["conda-forge"]
+platforms = ["osx-arm64", "osx-64", "win-64"]
+
+[dependencies]
+python = "3.12.*"
+manim = ">=0.19"      # animation; brings cairo + pango (Vietnamese text) from conda-forge
+ffmpeg = "*"          # audio/video plumbing; includes libvpx-vp9 for transparent inserts
+nodejs = "22.*"       # Remotion (compositing, captions, final encode)
+tomlkit = "<0.14"     # conda-side pin so the PyPI solve for vieneu's gradio dep succeeds
+
+[pypi-dependencies]
+vieneu = "*"          # Vietnamese TTS, local CPU, Apache-2.0
+ziamath = "*"         # LaTeX math -> SVG without a TeX install
+pypdfium2 = ">=5.13.0, <6"  # PDF decks: exact page objects (Apache-2.0 / BSD)
+kokoro-onnx = ">=0.6.1, <0.7"
+
+[activation.env]
+# Models live inside this folder, as real files (no symlinks: onnxruntime >= 1.23
+# refuses model data reached through Hugging Face cache symlinks).
+HF_HOME = "$PIXI_PROJECT_ROOT/models/hf"
+HF_HUB_DISABLE_SYMLINKS = "1"
+HF_HUB_DISABLE_SYMLINKS_WARNING = "1"
+HF_HUB_DISABLE_TELEMETRY = "1"
+PYTHONUTF8 = "1"
+PYTHONWARNINGS = "ignore::SyntaxWarning"
+
+[tasks]
+os = "python run.py"

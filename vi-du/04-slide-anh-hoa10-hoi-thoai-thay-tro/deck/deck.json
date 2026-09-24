@@ -1,0 +1,396 @@
+{
+ "source": "deck.pdf",
+ "canvas": [
+  1920,
+  1080
+ ],
+ "pages": [
+  {
+   "page": 1,
+   "mode": "flat",
+   "size_pt": [
+    1382.4000244140625,
+    777.5999755859375
+   ],
+   "scale": 1.3888888643602288,
+   "offset": [
+    0,
+    0
+   ],
+   "background_objects": 1,
+   "elements": [
+    {
+     "box": [
+      288,
+      16,
+      1672,
+      204
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 1
+    },
+    {
+     "box": [
+      1676,
+      8,
+      1904,
+      792
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 2
+    },
+    {
+     "box": [
+      340,
+      252,
+      1648,
+      1068
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 3
+    },
+    {
+     "box": [
+      1108,
+      232,
+      1724,
+      808
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 4
+    },
+    {
+     "box": [
+      224,
+      288,
+      812,
+      696
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 5
+    },
+    {
+     "box": [
+      228,
+      712,
+      812,
+      804
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 6
+    }
+   ],
+   "leaves": []
+  },
+  {
+   "page": 2,
+   "mode": "flat",
+   "size_pt": [
+    1382.4000244140625,
+    777.5999755859375
+   ],
+   "scale": 1.3888888643602288,
+   "offset": [
+    0,
+    0
+   ],
+   "background_objects": 1,
+   "elements": [
+    {
+     "box": [
+      1672,
+      16,
+      1876,
+      220
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 1
+    },
+    {
+     "box": [
+      232,
+      40,
+      1668,
+      208
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 2
+    },
+    {
+     "box": [
+      708,
+      280,
+      1236,
+      816
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 3
+    },
+    {
+     "box": [
+      60,
+      376,
+      100,
+      704
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 4
+    }
+   ],
+   "leaves": []
+  },
+  {
+   "page": 3,
+   "mode": "flat",
+   "size_pt": [
+    1382.4000244140625,
+    777.5999755859375
+   ],
+   "scale": 1.3888888643602288,
+   "offset": [
+    0,
+    0
+   ],
+   "background_objects": 1,
+   "elements": [
+    {
+     "box": [
+      32,
+      8,
+      572,
+      648
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 1
+    },
+    {
+     "box": [
+      1672,
+      16,
+      1876,
+      220
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 2
+    },
+    {
+     "box": [
+      232,
+      40,
+      1668,
+      196
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 3
+    },
+    {
+     "box": [
+      1744,
+      224,
+      1896,
+      1060
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 4
+    },
+    {
+     "box": [
+      628,
+      272,
+      1004,
+      648
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 5
+    },
+    {
+     "box": [
+      1068,
+      272,
+      1444,
+      648
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 6
+    },
+    {
+     "box": [
+      1496,
+      316,
+      1572,
+      392
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 7
+    },
+    {
+     "box": [
+      1580,
+      320,
+      1720,
+      380
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 8
+    },
+    {
+     "box": [
+      60,
+      376,
+      100,
+      704
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 9
+    },
+    {
+     "box": [
+      1496,
+      412,
+      1576,
+      488
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 10
+    },
+    {
+     "box": [
+      1592,
+      416,
+      1708,
+      484
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 11
+    },
+    {
+     "box": [
+      1504,
+      508,
+      1580,
+      584
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 12
+    },
+    {
+     "box": [
+      1588,
+      512,
+      1724,
+      572
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 13
+    },
+    {
+     "box": [
+      32,
+      672,
+      1736,
+      1060
+     ],
+     "paths": [],
+     "kinds": [
+      "picture"
+     ],
+     "text": "",
+     "id": 14
+    }
+   ],
+   "leaves": []
+  }
+ ]
+}

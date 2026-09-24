@@ -1,0 +1,268 @@
+{
+  "id": "V-0005",
+  "slug": "hinh-hoc-bieu-do-va-bai-doc",
+  "title": "Hình học, biểu đồ và bài đọc",
+  "subject": "TOÁN",
+  "voice": "Minh Quân Pro",
+  "scenes": [
+    {
+      "heading": "Định lý Pythagoras",
+      "figures": {
+        "tri": {
+          "points": {
+            "A": [
+              0,
+              0
+            ],
+            "B": [
+              4,
+              0
+            ],
+            "C": [
+              0,
+              3
+            ]
+          },
+          "segments": [
+            "AB",
+            "CA",
+            "BC"
+          ],
+          "polygons": [
+            "ABC"
+          ],
+          "right_angles": [
+            "BAC"
+          ],
+          "lengths": {
+            "AB": "4",
+            "CA": "3",
+            "BC": "c"
+          },
+          "size": 4.2
+        }
+      },
+      "steps": [
+        {
+          "say": "Cho tam giác ABC vuông tại A.",
+          "show": [
+            {
+              "id": "tri",
+              "figure": "tri",
+              "draw": [
+                "poly:ABC",
+                "A",
+                "B",
+                "C",
+                "AB",
+                "CA",
+                "right:BAC"
+              ]
+            }
+          ]
+        },
+        {
+          "say": "Hai cạnh góc vuông có độ dài 3 và 4.",
+          "show": [
+            {
+              "id": "tri",
+              "figure": "tri",
+              "draw": [
+                "poly:ABC",
+                "A",
+                "B",
+                "C",
+                "AB",
+                "CA",
+                "right:BAC",
+                "len:AB",
+                "len:CA"
+              ]
+            }
+          ]
+        },
+        {
+          "say": "Cạnh huyền BC nằm đối diện góc vuông.",
+          "show": [
+            {
+              "id": "tri",
+              "figure": "tri"
+            }
+          ],
+          "emphasize": [
+            "tri:BC"
+          ]
+        },
+        {
+          "say": "Theo định lý Pythagoras, c bình phương bằng 3 bình phương cộng 4 bình phương, nên c bằng 5.",
+          "show": [
+            {
+              "id": "f",
+              "math": "c^2 = 3^2 + 4^2 \\Rightarrow c = 5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Cơ cấu nguồn điện",
+      "subheading": "Tỉ lệ phần trăm",
+      "figures": {
+        "pie": {
+          "type": "pie",
+          "unit": "%",
+          "data": [
+            {
+              "label": "Than",
+              "value": 34
+            },
+            {
+              "label": "Khí",
+              "value": 24
+            },
+            {
+              "label": "Thủy điện",
+              "value": 18
+            },
+            {
+              "label": "Gió",
+              "value": 14
+            },
+            {
+              "label": "Hạt nhân",
+              "value": 10,
+              "emphasis": true
+            }
+          ]
+        }
+      },
+      "steps": [
+        {
+          "say": "Than chiếm tỉ lệ lớn nhất, 34 phần trăm.",
+          "show": [
+            {
+              "id": "pie",
+              "figure": "pie",
+              "draw": [
+                "Than"
+              ]
+            }
+          ]
+        },
+        {
+          "say": "Tiếp theo là khí và thủy điện.",
+          "show": [
+            {
+              "id": "pie",
+              "figure": "pie",
+              "draw": [
+                "Than",
+                "Khí",
+                "Thủy điện"
+              ]
+            }
+          ]
+        },
+        {
+          "say": "Gió và hạt nhân chiếm phần còn lại, trong đó hạt nhân chỉ 10 phần trăm.",
+          "show": [
+            {
+              "id": "pie",
+              "figure": "pie"
+            }
+          ],
+          "emphasize": [
+            "pie:Hạt nhân"
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tỉ lệ dùng internet",
+      "figures": {
+        "bar": {
+          "type": "bar",
+          "unit": "%",
+          "data": [
+            {
+              "label": "2019",
+              "value": 42
+            },
+            {
+              "label": "2020",
+              "value": 55
+            },
+            {
+              "label": "2021",
+              "value": 61
+            },
+            {
+              "label": "2022",
+              "value": 70
+            }
+          ]
+        }
+      },
+      "steps": [
+        {
+          "say": "Tỉ lệ dùng internet tăng đều qua các năm, từ 42 lên 70 phần trăm.",
+          "show": [
+            {
+              "id": "bar",
+              "figure": "bar"
+            }
+          ],
+          "emphasize": [
+            "bar:2022"
+          ]
+        }
+      ],
+      "background": {
+        "image": "assets/images/example-coffee.jpg",
+        "zoom": "in",
+        "wash": 0.78
+      }
+    },
+    {
+      "heading": "Đọc nhanh",
+      "subheading": "Skimming",
+      "steps": [
+        {
+          "say": "Hãy đọc lướt đoạn văn sau.",
+          "show": [
+            {
+              "id": "p",
+              "passage": "Human beings do not all run on the same internal clock. Sleep researchers describe a spectrum of chronotypes, from early risers whose alertness peaks before nine in the morning to late types who do their sharpest thinking well after dark."
+            }
+          ]
+        },
+        {
+          "say": "Từ khóa quan trọng nhất là chronotypes.",
+          "mark": [
+            {
+              "id": "p",
+              "words": "chronotypes",
+              "style": "circle"
+            }
+          ]
+        },
+        {
+          "say": "Ý chính: con người không có cùng một đồng hồ sinh học.",
+          "mark": [
+            {
+              "id": "p",
+              "words": "do not all run on the same internal clock",
+              "style": "highlight"
+            },
+            {
+              "id": "p",
+              "words": "early risers",
+              "style": "underline"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "16:9"
+}

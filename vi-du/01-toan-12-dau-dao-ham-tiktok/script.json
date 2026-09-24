@@ -1,0 +1,124 @@
+{
+  "id": "V-0001",
+  "slug": "dau-dao-ham",
+  "title": "Dấu đạo hàm",
+  "subject": "TOÁN",
+  "voice": "Minh Quân Pro",
+  "scenes": [
+    {
+      "heading": "Dạng bài",
+      "subheading": "Xét tính đơn điệu",
+      "spacing": 1.0,
+      "steps": [
+        {
+          "say": "Cho hàm số y xác định bởi ba công thức trên ba khoảng khác nhau.",
+          "show": [{"id": "fn", "math": "y = \\begin{cases} -x & \\text{nếu } x < -1 \\\\ 1 & \\text{nếu } -1 \\le x \\le 1 \\\\ x & \\text{nếu } x > 1 \\end{cases}"}]
+        },
+        {
+          "say": "Đây là dạng bài xét dấu đạo hàm để kết luận tính đơn điệu của hàm số.",
+          "show": [{"id": "dang", "text": "Xét dấu đạo hàm để kết luận\ntính đơn điệu của hàm số", "style": "accent"}]
+        }
+      ]
+    },
+    {
+      "heading": "Công thức cần nhớ",
+      "spacing": 0.85,
+      "steps": [
+        {
+          "say": "Nếu y phẩy nhỏ hơn 0 trên khoảng K thì hàm số nghịch biến trên K.",
+          "show": [{"id": "neg", "rich": "$y' < 0$ trên $K \\Rightarrow$ nghịch biến trên $K$"}]
+        },
+        {
+          "say": "Nếu y phẩy lớn hơn 0 trên khoảng K thì hàm số đồng biến trên K.",
+          "show": [{"id": "pos", "rich": "$y' > 0$ trên $K \\Rightarrow$ đồng biến trên $K$"}]
+        },
+        {
+          "say": "Còn nếu y phẩy bằng 0 trên toàn khoảng K thì hàm số không đổi trên K.",
+          "show": [{"id": "zero", "rich": "$y' = 0$ trên $K \\Rightarrow$ không đổi trên $K$"}]
+        }
+      ],
+      "end": [{"id": "note", "text": "K là một khoảng bất kì", "style": "muted"}]
+    },
+    {
+      "heading": "Lời giải",
+      "spacing": 0.5,
+      "graph": {
+        "x": [-3.2, 3.2],
+        "y": [-0.5, 3.5],
+        "pieces": [
+          {"f": "-x", "from": -3.2, "to": -1},
+          {"f": "1 + 0*x", "from": -1, "to": 1},
+          {"f": "x", "from": 1, "to": 3.2}
+        ],
+        "marks": [-1, 1]
+      },
+      "steps": [
+        {
+          "say": "Trước hết, ta vẽ đồ thị để nhìn rõ ba khoảng cần xét.",
+          "draw_graph": true
+        },
+        {
+          "say": "Bước 1. Trên khoảng âm vô cực đến trừ 1, hàm số có công thức y bằng trừ x.",
+          "band": [-3.2, -1],
+          "show": [
+            {"id": "interval", "rich": "Bước 1: $x \\in (-\\infty;\\ -1)$", "style": "deep"},
+            {"id": "work", "math": "y = -x"}
+          ]
+        },
+        {
+          "say": "Đạo hàm bằng trừ 1, nhỏ hơn 0, nên hàm số nghịch biến trên khoảng này.",
+          "show": [
+            {"id": "work", "math": "y = -x \\Rightarrow y' = -1 < 0"},
+            {"id": "label", "text": "Hàm số nghịch biến", "style": "accent"}
+          ]
+        },
+        {
+          "say": "Bước 2. Trên khoảng 1 đến dương vô cực, hàm số có công thức y bằng x.",
+          "band": [1, 3.2],
+          "hide": ["label"],
+          "show": [
+            {"id": "interval", "rich": "Bước 2: $x \\in (1;\\ +\\infty)$", "style": "deep"},
+            {"id": "work", "math": "y = x"}
+          ]
+        },
+        {
+          "say": "Đạo hàm bằng 1, lớn hơn 0, nên hàm số đồng biến trên khoảng này.",
+          "show": [
+            {"id": "work", "math": "y = x \\Rightarrow y' = 1 > 0"},
+            {"id": "label", "text": "Hàm số đồng biến", "style": "accent"}
+          ]
+        },
+        {
+          "say": "Bước 3. Trên khoảng từ trừ 1 đến 1, hàm số luôn bằng 1.",
+          "band": [-1, 1],
+          "hide": ["label"],
+          "show": [
+            {"id": "interval", "rich": "Bước 3: $x \\in (-1;\\ 1)$", "style": "deep"},
+            {"id": "work", "math": "y = 1"}
+          ]
+        },
+        {
+          "say": "Đạo hàm bằng 0 trên cả khoảng, nên hàm số không đổi. Đó là một hàm hằng.",
+          "show": [
+            {"id": "work", "math": "y = 1 \\Rightarrow y' = 0"},
+            {"id": "label", "text": "Hàm số không đổi", "style": "accent"}
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Kết luận",
+      "spacing": 1.1,
+      "steps": [
+        {
+          "say": "Tổng hợp lại, ta có kết quả trên cả ba khoảng.",
+          "show": [{"id": "table", "math": "\\begin{array}{lll} (-\\infty;\\ -1) & y' = -1 < 0 & \\text{nghịch biến} \\\\ (-1;\\ 1) & y' = 0 & \\text{không đổi} \\\\ (1;\\ +\\infty) & y' = 1 > 0 & \\text{đồng biến} \\end{array}"}]
+        },
+        {
+          "say": "Ghi nhớ: dấu của đạo hàm quyết định chiều biến thiên của hàm số.",
+          "show": [{"id": "takeaway", "text": "Dấu của đạo hàm quyết định\nchiều biến thiên của hàm số", "style": "accent"}]
+        }
+      ]
+    }
+  ]
+}

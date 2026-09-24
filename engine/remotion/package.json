@@ -1,0 +1,16 @@
+{
+  "name": "aiducation-tiktok-remotion",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@remotion/cli": "4.0.508",
+    "@remotion/fonts": "4.0.508",
+    "remotion": "4.0.508",
+    "react": "19.2.8",
+    "react-dom": "19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.9.3"
+  }
+}

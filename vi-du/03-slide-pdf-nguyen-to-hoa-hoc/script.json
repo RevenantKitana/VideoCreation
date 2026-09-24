@@ -1,0 +1,91 @@
+{
+  "id": "V-0003",
+  "slug": "nguyen-to-hoa-hoc",
+  "title": "Nguyên tố hóa học",
+  "subject": "HÓA",
+  "voice": "Minh Quân Pro",
+  "scenes": [
+    {
+      "type": "slide",
+      "page": 1,
+      "steps": [
+        {
+          "say": "Hôm nay chúng ta tìm hiểu khái niệm nguyên tố hóa học.",
+          "reveal": [
+            {
+              "el": 1,
+              "at": "nguyên tố hóa học",
+              "anim": "drop"
+            }
+          ]
+        },
+        {
+          "say": "Nguyên tố hóa học là tập hợp các nguyên tử có cùng số proton trong hạt nhân.",
+          "reveal": [
+            {
+              "el": 3,
+              "at": "tập hợp"
+            },
+            {
+              "el": 2,
+              "at": "cùng số proton",
+              "anim": "right"
+            }
+          ]
+        },
+        {
+          "say": "Ví dụ, mọi nguyên tử có sáu proton đều là nguyên tố carbon.",
+          "reveal": [
+            {
+              "el": 4,
+              "at": "Ví dụ",
+              "anim": "pop"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "page": 2,
+      "steps": [
+        {
+          "say": "Vậy làm sao để xác định một nguyên tố?",
+          "reveal": [
+            {
+              "el": 1
+            }
+          ]
+        },
+        {
+          "say": "Đầu tiên, ta đếm số proton trong hạt nhân.",
+          "reveal": [
+            {
+              "el": 2,
+              "at": "đếm số proton"
+            },
+            {
+              "el": 4,
+              "at": "hạt nhân",
+              "anim": "pop"
+            }
+          ]
+        },
+        {
+          "say": "Sau đó tra bảng tuần hoàn. Lưu ý, không dùng số neutron để xác định nguyên tố.",
+          "reveal": [
+            {
+              "el": 3,
+              "at": "tra bảng tuần hoàn"
+            },
+            {
+              "el": 5,
+              "at": "không dùng số neutron"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "format": "16:9"
+}

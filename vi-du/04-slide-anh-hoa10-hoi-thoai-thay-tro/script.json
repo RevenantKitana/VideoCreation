@@ -1,0 +1,259 @@
+{
+  "id": "V-0004",
+  "slug": "nguyen-to-hoa-hoc-hoa10",
+  "title": "Nguyên tố hóa học (hoa10)",
+  "subject": "HÓA",
+  "voice": "Minh Quân Pro",
+  "scenes": [
+    {
+      "type": "slide",
+      "page": 1,
+      "steps": [
+        {
+          "say": "Trước khi đi vào khái niệm, các em hãy cùng quan sát trên màn hình. Chúng ta có hai vật thể rất quen thuộc. Một bên là viên kim cương lấp lánh, cứng cáp; bên kia chính là than chì đen nhám, dễ gãy.",
+          "voice": "Minh Quân Pro",
+          "reveal": [
+            {
+              "box": [
+                370,
+                95,
+                1560,
+                200
+              ],
+              "at": "các em hãy cùng quan sát",
+              "anim": "drop"
+            },
+            {
+              "box": [
+                215,
+                255,
+                800,
+                692
+              ],
+              "at": "viên kim cương",
+              "anim": "left"
+            },
+            {
+              "box": [
+                230,
+                700,
+                830,
+                790
+              ],
+              "at": "lấp lánh, cứng cáp",
+              "anim": "left"
+            },
+            {
+              "box": [
+                1105,
+                235,
+                1660,
+                692
+              ],
+              "at": "than chì đen nhám",
+              "anim": "right"
+            },
+            {
+              "box": [
+                1120,
+                700,
+                1730,
+                790
+              ],
+              "at": "dễ gãy",
+              "anim": "right"
+            }
+          ]
+        },
+        {
+          "say": "Nam thử đoán xem, hai vật thể hoàn toàn trái ngược này có cùng chung một nguyên tố hóa học không?",
+          "voice": "Minh Quân Pro",
+          "reveal": [
+            {
+              "box": [
+                655,
+                820,
+                1270,
+                1010
+              ],
+              "at": "cùng chung một nguyên tố",
+              "anim": "rise"
+            }
+          ]
+        },
+        {
+          "say": "Dạ, nhìn một anh thì lộng lẫy, một anh thì lem luốc thế này, em nghĩ chắc chúng chẳng có họ hàng gì với nhau đâu thầy ạ!",
+          "voice": "Trúc Ly",
+          "reveal": []
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "page": 2,
+      "steps": [
+        {
+          "say": "Cảm quan bên ngoài dễ làm chúng ta bị đánh lừa đấy. Bí mật thực sự nằm sâu bên trong hạt nhân cơ. Cả kim cương và than chì đều được tạo nên từ những nguyên tử có sáu proton trong hạt nhân.",
+          "voice": "Minh Quân Pro",
+          "reveal": [
+            {
+              "box": [
+                350,
+                90,
+                1440,
+                200
+              ],
+              "at": "Bí mật thực sự",
+              "anim": "drop"
+            },
+            {
+              "box": [
+                140,
+                280,
+                660,
+                970
+              ],
+              "at": "Cả kim cương và than chì",
+              "anim": "left"
+            },
+            {
+              "box": [
+                690,
+                280,
+                1225,
+                970
+              ],
+              "at": "sáu proton trong hạt nhân",
+              "anim": "rise"
+            }
+          ]
+        },
+        {
+          "say": "Dù cho số neutron của chúng có chút khác biệt, thì chúng vẫn thuộc nguyên tố carbon.",
+          "voice": "Minh Quân Pro",
+          "reveal": [
+            {
+              "box": [
+                1255,
+                300,
+                1800,
+                875
+              ],
+              "at": "vẫn thuộc nguyên tố carbon",
+              "anim": "right"
+            }
+          ]
+        },
+        {
+          "say": "À, em hiểu ý thầy rồi! Nhưng thầy cho em hỏi, nguyên tử carbon nào thì tạo ra kim cương, còn nguyên tử nào tạo ra than chì ạ?",
+          "voice": "Trúc Ly",
+          "reveal": []
+        },
+        {
+          "say": "Câu hỏi của em rất hay, nhưng Nam đang hiểu lầm một chút rồi! Thành phần các nguyên tử cấu tạo nên chúng là như nhau.",
+          "voice": "Minh Quân Pro",
+          "reveal": []
+        },
+        {
+          "say": "Điểm khác biệt mấu chốt nằm ở cấu trúc tinh thể, nói đơn giản là cách các nguyên tử sắp xếp và liên kết với nhau.",
+          "voice": "Minh Quân Pro",
+          "reveal": []
+        },
+        {
+          "say": "Chính cách sắp xếp khác biệt đó mới khiến cho hình dạng, tính chất của chúng khác nhau đấy em ạ.",
+          "voice": "Minh Quân Pro",
+          "reveal": []
+        },
+        {
+          "say": "Ồ, em đã hiểu rồi ạ.",
+          "voice": "Trúc Ly",
+          "reveal": []
+        }
+      ]
+    },
+    {
+      "type": "slide",
+      "page": 3,
+      "steps": [
+        {
+          "say": "Bây giờ thầy có một thử thách nhỏ cho Nam. Em hãy nhìn lên màn hình, đây là ba nguyên tử khác nhau nhưng chúng đều thuộc nguyên tố hydrogen. Em thử quan sát xem, ba nguyên tử này có điểm gì chung cốt lõi nhất?",
+          "voice": "Minh Quân Pro",
+          "reveal": [
+            {
+              "box": [
+                390,
+                95,
+                1420,
+                200
+              ],
+              "at": "đây là ba nguyên tử",
+              "anim": "drop"
+            },
+            {
+              "box": [
+                1480,
+                310,
+                1745,
+                590
+              ],
+              "at": "điểm gì chung cốt lõi",
+              "anim": "right"
+            }
+          ]
+        },
+        {
+          "say": "Ưm, em thấy nguyên tử đầu tiên không có neutron nào, nguyên tử thứ hai có một neutron, nguyên tử thứ ba lại có hai neutron; nhưng hạt nhân của chúng luôn có đúng một proton! Điểm chung là số proton thầy ạ!",
+          "voice": "Trúc Ly",
+          "reveal": [
+            {
+              "box": [
+                200,
+                275,
+                580,
+                645
+              ],
+              "at": "nguyên tử đầu tiên",
+              "anim": "rise"
+            },
+            {
+              "box": [
+                640,
+                275,
+                1010,
+                645
+              ],
+              "at": "nguyên tử thứ hai",
+              "anim": "rise"
+            },
+            {
+              "box": [
+                1080,
+                275,
+                1450,
+                645
+              ],
+              "at": "nguyên tử thứ ba",
+              "anim": "rise"
+            },
+            {
+              "box": [
+                255,
+                675,
+                1670,
+                940
+              ],
+              "at": "Điểm chung là số proton",
+              "anim": "rise"
+            }
+          ]
+        },
+        {
+          "say": "Hoàn toàn chính xác!",
+          "voice": "Minh Quân Pro",
+          "reveal": []
+        }
+      ]
+    }
+  ],
+  "format": "16:9"
+}

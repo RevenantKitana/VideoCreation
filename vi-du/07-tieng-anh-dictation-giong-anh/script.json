@@ -1,0 +1,70 @@
+{
+  "id": "V-0007",
+  "slug": "dictation-robusta",
+  "title": "Dictation Robusta",
+  "subject": "ANH",
+  "voice": "en:bf_emma",
+  "scenes": [
+    {
+      "heading": "Dictation · Coffee",
+      "background": {
+        "image": "assets/images/example-coffee-2.jpg",
+        "zoom": "in",
+        "wash": 0.55
+      },
+      "steps": [
+        {
+          "say": "Listen and write down what you hear.",
+          "show": [
+            {
+              "id": "t",
+              "text": "Nghe và chép lại",
+              "style": "accent"
+            }
+          ]
+        },
+        {
+          "say": "Robusta grows well in the lowlands of Vietnam.",
+          "show": [
+            {
+              "id": "q",
+              "text": "Robusta grows well\nin the ______ of Vietnam."
+            }
+          ],
+          "caption": false
+        }
+      ]
+    },
+    {
+      "heading": "Từ vựng",
+      "background": {
+        "image": "assets/images/example-coffee.jpg",
+        "zoom": "out",
+        "wash": 0.72
+      },
+      "steps": [
+        {
+          "say": "Lowlands nghĩa là vùng đất thấp.",
+          "voice": "Minh Quân Pro",
+          "show": [
+            {
+              "id": "w",
+              "rich": "lowlands = vùng đất thấp",
+              "style": "deep"
+            }
+          ]
+        },
+        {
+          "say": "Robusta grows well in the lowlands of Vietnam.",
+          "show": [
+            {
+              "id": "a",
+              "text": "Robusta grows well\nin the lowlands of Vietnam.",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "V-0002",
+  "slug": "giai-phuong-trinh-bac-hai",
+  "title": "Giải phương trình bậc hai",
+  "subject": "TOÁN",
+  "voice": "Minh Quân Pro",
+  "format": "9:16",
+  "captions": "on",
+  "scenes": [
+    {
+      "heading": "Giải phương trình bậc 2",
+      "subheading": "Toán 9",
+      "steps": [
+        {
+          "say": "Giải nhanh phương trình x bình phương trừ năm x cộng sáu bằng không trong ba mươi giây.",
+          "show": [
+            {
+              "id": "de-bai",
+              "math": "x^2 - 5x + 6 = 0"
+            }
+          ]
+        },
+        {
+          "say": "Chúng ta sử dụng phương pháp phân tích đa thức thành nhân tử.",
+          "show": [
+            {
+              "id": "phuong-phap",
+              "text": "Phương pháp: Phân tích thành nhân tử",
+              "style": "deep"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Phân tích nhân tử",
+      "subheading": "Tìm hai số",
+      "steps": [
+        {
+          "say": "Tìm hai số có tích bằng sáu và có tổng bằng trừ năm.",
+          "show": [
+            {
+              "id": "dieu-kien",
+              "rich": "Tìm hai số: $\\text{tích} = 6$ và $\\text{tổng} = -5$"
+            }
+          ]
+        },
+        {
+          "say": "Đó chính là trừ hai và trừ ba.",
+          "show": [
+            {
+              "id": "hai-so",
+              "math": "(-2) \\times (-3) = 6 \\quad \\text{và} \\quad (-2) + (-3) = -5",
+              "style": "accent"
+            }
+          ]
+        },
+        {
+          "say": "Phương trình được viết lại thành x trừ hai nhân x trừ ba bằng không.",
+          "show": [
+            {
+              "id": "nhan-tu",
+              "math": "(x - 2)(x - 3) = 0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Tìm nghiệm",
+      "steps": [
+        {
+          "say": "Tương đương x trừ hai bằng không hoặc x trừ ba bằng không.",
+          "show": [
+            {
+              "id": "nghiem-1",
+              "math": "\\begin{cases} x - 2 = 0 \\\\ x - 3 = 0 \\end{cases}"
+            }
+          ]
+        },
+        {
+          "say": "Vậy phương trình có hai nghiệm phân biệt là x bằng hai và x bằng ba.",
+          "show": [
+            {
+              "id": "nghiem-2",
+              "math": "\\begin{cases} x = 2 \\\\ x = 3 \\end{cases}",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Ghi nhớ",
+      "steps": [
+        {
+          "say": "Phương pháp nhẩm nghiệm theo tích và tổng giúp giải nhanh phương trình bậc hai.",
+          "show": [
+            {
+              "id": "takeaway",
+              "text": "Nhẩm nghiệm: Tích = 6, Tổng = -5",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

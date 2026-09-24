@@ -1,0 +1,32 @@
+# Local environment and dependencies
+.pixi/
+.tools/
+.cache/
+node_modules/
+engine/remotion/node_modules/
+\$PIXI_PROJECT_ROOT/
+$PIXI_PROJECT_ROOT/
+
+# Models and large binaries (>100MB blocked by GitHub)
+models/hf/
+models/kokoro/
+models/espeak-ng-data/
+models/aligner/*.onnx
+*.onnx
+
+# Render builds and video outputs
+videos/*/build/
+videos/*/voice/raw/
+videos/*/voice/lines/
+videos/*/final.mp4
+videos/api_jobs/
+build/
+media/
+*.mp4
+
+# Python cache & OS files
+__pycache__/
+*.py[cod]
+.DS_Store
+Thumbs.db
+.env

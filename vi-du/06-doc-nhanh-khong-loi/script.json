@@ -1,0 +1,43 @@
+{
+  "id": "V-0006",
+  "slug": "doc-nhanh-khong-loi",
+  "title": "Đọc nhanh không lời",
+  "subject": "ANH",
+  "voice": "none",
+  "scenes": [
+    {
+      "heading": "Quét · Scanning",
+      "steps": [
+        {
+          "hold": 2.5,
+          "show": [
+            {
+              "id": "p",
+              "passage": "A secondary school in Seattle moved its first lessons from 7:50 to 8:45 and recorded an average gain of 34 minutes of sleep per pupil."
+            }
+          ]
+        },
+        {
+          "hold": 2.0,
+          "mark": [
+            {
+              "id": "p",
+              "words": "Seattle",
+              "style": "circle"
+            }
+          ]
+        },
+        {
+          "hold": 2.0,
+          "mark": [
+            {
+              "id": "p",
+              "words": "34 minutes",
+              "style": "highlight"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

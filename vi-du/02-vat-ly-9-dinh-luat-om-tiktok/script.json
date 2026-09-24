@@ -1,0 +1,201 @@
+{
+  "id": "V-0002",
+  "slug": "dinh-luat-om",
+  "title": "Định luật Ôm",
+  "subject": "LÝ",
+  "voice": "Minh Quân Pro",
+  "scenes": [
+    {
+      "heading": "Dạng bài",
+      "subheading": "Định luật Ôm · Vật lý 9",
+      "spacing": 1.0,
+      "steps": [
+        {
+          "say": "Điện trở 12 ôm mắc vào hiệu điện thế 6 vôn. Cường độ dòng điện chạy qua nó bằng bao nhiêu?",
+          "show": [
+            {
+              "id": "de",
+              "math": "R = 12\\ \\Omega,\\quad U = 6\\ \\text{V}"
+            },
+            {
+              "id": "hoi",
+              "math": "I = ?"
+            }
+          ]
+        },
+        {
+          "say": "Đây là dạng bài áp dụng định luật Ôm để tính cường độ dòng điện.",
+          "show": [
+            {
+              "id": "dang",
+              "text": "Áp dụng định luật Ôm\ntính cường độ dòng điện",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Công thức cần nhớ",
+      "spacing": 0.85,
+      "steps": [
+        {
+          "say": "Định luật Ôm: cường độ dòng điện bằng hiệu điện thế chia cho điện trở.",
+          "show": [
+            {
+              "id": "law",
+              "math": "I = \\dfrac{U}{R}"
+            }
+          ]
+        },
+        {
+          "say": "Đơn vị: cường độ dòng điện đo bằng ampe, hiệu điện thế đo bằng vôn, điện trở đo bằng ôm.",
+          "show": [
+            {
+              "id": "uI",
+              "rich": "$I$: cường độ dòng điện (A)"
+            },
+            {
+              "id": "uU",
+              "rich": "$U$: hiệu điện thế (V)"
+            },
+            {
+              "id": "uR",
+              "rich": "$R$: điện trở ($\\Omega$)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Lời giải",
+      "spacing": 0.8,
+      "steps": [
+        {
+          "say": "Tóm tắt đề: R bằng 12 ôm, U bằng 6 vôn, cần tìm I.",
+          "show": [
+            {
+              "id": "tomtat",
+              "math": "R = 12\\ \\Omega;\\quad U = 6\\ \\text{V};\\quad I = \\ ?"
+            }
+          ]
+        },
+        {
+          "say": "Áp dụng định luật Ôm, cường độ dòng điện I bằng U chia cho R.",
+          "show": [
+            {
+              "id": "work",
+              "math": "I = \\dfrac{U}{R}"
+            }
+          ]
+        },
+        {
+          "say": "Thay số: I bằng 6 chia cho 12, bằng 0,5 ampe.",
+          "show": [
+            {
+              "id": "work",
+              "math": "I = \\dfrac{U}{R} = \\dfrac{6}{12} = 0{,}5\\ \\text{A}"
+            }
+          ]
+        },
+        {
+          "say": "Vậy cường độ dòng điện chạy qua điện trở là 0,5 ampe.",
+          "show": [
+            {
+              "id": "dapso",
+              "rich": "Đáp số: $I = 0{,}5\\ \\text{A}$",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Đồ thị I theo U",
+      "subheading": "Với R = 12 Ω",
+      "spacing": 0.5,
+      "graph": {
+        "x": [
+          0,
+          7.5
+        ],
+        "y": [
+          0,
+          0.7
+        ],
+        "pieces": [
+          {
+            "f": "x/12",
+            "from": 0,
+            "to": 7.5
+          }
+        ],
+        "marks": [
+          {
+            "point": [
+              6,
+              0.5
+            ],
+            "xlabel": "6",
+            "ylabel": "0{,}5"
+          }
+        ],
+        "labels": {
+          "x": "U\\ (\\text{V})",
+          "y": "I\\ (\\text{A})"
+        },
+        "width": 6.0,
+        "height": 3.8
+      },
+      "steps": [
+        {
+          "say": "Giữ nguyên điện trở 12 ôm, đồ thị I theo U là một đường thẳng đi qua gốc tọa độ.",
+          "draw_graph": true
+        },
+        {
+          "say": "Tại U bằng 6 vôn, đồ thị cho I bằng 0,5 ampe, đúng như kết quả vừa tính.",
+          "band": [
+            5.85,
+            6.15
+          ],
+          "show": [
+            {
+              "id": "diem",
+              "rich": "$U = 6\\ \\text{V} \\Rightarrow I = 0{,}5\\ \\text{A}$"
+            }
+          ]
+        },
+        {
+          "say": "U tăng gấp đôi thì I cũng tăng gấp đôi. I tỉ lệ thuận với U.",
+          "show": [
+            {
+              "id": "tile",
+              "rich": "$I$ tỉ lệ thuận với $U$",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "heading": "Kết luận",
+      "spacing": 1.0,
+      "steps": [
+        {
+          "say": "Ghi nhớ: muốn tính cường độ dòng điện, lấy hiệu điện thế chia cho điện trở.",
+          "show": [
+            {
+              "id": "law",
+              "math": "I = \\dfrac{U}{R}"
+            },
+            {
+              "id": "takeaway",
+              "text": "Muốn tính dòng điện,\nlấy hiệu điện thế chia điện trở",
+              "style": "accent"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "modes": [
+    {"name": "Bài giảng TikTok (dọc 9:16)",
+     "what": "Toán, Lý, Hóa, Sinh…: công thức, đồ thị, hình học, biểu đồ hiện dần theo lời giảng; phụ đề chạy chữ.",
+     "say": "Làm video về định lý Pythagoras lớp 8",
+     "examples": ["01-toan-12-dau-dao-ham-tiktok", "02-vat-ly-9-dinh-luat-om-tiktok"]},
+    {"name": "Video từ slide PDF (ngang 16:9)",
+     "what": "Gửi file PDF slide: từng phần của slide xuất hiện đúng lúc được nhắc tới. Có thể hội thoại thầy – trò.",
+     "say": "Làm video từ slide này",
+     "examples": ["03-slide-pdf-nguyen-to-hoa-hoc", "04-slide-anh-hoa10-hoi-thoai-thay-tro"]},
+    {"name": "Bài giảng ngang 16:9 cho app",
+     "what": "Hình vẽ bên trái, chữ bên phải; biểu đồ, ảnh nền, đoạn văn có khoanh/tô từ khóa.",
+     "say": "Làm bài giảng ngang về biểu đồ tròn",
+     "examples": ["05-hinh-hoc-bieu-do-bai-doc-16x9"]},
+    {"name": "Luyện đọc không lời",
+     "what": "Chỉ có hình và hiệu ứng khoanh, tô từ khóa — không giọng đọc.",
+     "say": "Làm video luyện đọc quét, không lời",
+     "examples": ["06-doc-nhanh-khong-loi"]},
+    {"name": "Tiếng Anh giọng bản xứ",
+     "what": "Giọng Anh/Mỹ đọc chính tả, từ vựng; có thể ẩn phụ đề câu cần chép; giải thích bằng tiếng Việt.",
+     "say": "Làm video chính tả tiếng Anh giọng Anh",
+     "examples": ["07-tieng-anh-dictation-giong-anh"]}
+  ],
+  "voices": "Giọng AI Minh Quân (nam) hoặc Trúc Ly (nữ) · tự thu âm giọng mình · nhân bản giọng của bạn (cần ký đồng ý) · 4 giọng tiếng Anh",
+  "also": "Theo dõi kênh: gửi ảnh chụp số liệu TikTok mỗi ngày, AI phân tích và đề xuất video tiếp theo.",
+  "examples": {
+    "01-toan-12-dau-dao-ham-tiktok": {"title": "Toán 12 — Xét dấu đạo hàm", "note": "Công thức, đồ thị tô vùng từng bước, giọng Minh Quân."},
+    "02-vat-ly-9-dinh-luat-om-tiktok": {"title": "Vật lý 9 — Định luật Ôm", "note": "Bài tập có đồ thị I theo U; AI tự làm từ một câu yêu cầu."},
+    "03-slide-pdf-nguyen-to-hoa-hoc": {"title": "Slide PDF — Nguyên tố hóa học", "note": "Từng phần của slide hiện đúng lúc được nhắc tới."},
+    "04-slide-anh-hoa10-hoi-thoai-thay-tro": {"title": "Slide ảnh — Hóa 10, hội thoại thầy – trò", "note": "Hình vẽ tay được cắt ra và bay vào; hai giọng."},
+    "05-hinh-hoc-bieu-do-bai-doc-16x9": {"title": "16:9 — Hình học, biểu đồ, bài đọc", "note": "Tam giác vẽ từng cạnh, biểu đồ tròn và cột, ảnh nền, khoanh từ khóa."},
+    "06-doc-nhanh-khong-loi": {"title": "Luyện đọc quét — không lời", "note": "Khoanh và tô từ khóa, không giọng đọc."},
+    "07-tieng-anh-dictation-giong-anh": {"title": "Tiếng Anh — Chính tả giọng Anh", "note": "Ẩn phụ đề câu cần chép; giải thích bằng tiếng Việt."}
+  }
+}
