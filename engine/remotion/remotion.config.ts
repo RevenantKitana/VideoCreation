@@ -7,6 +7,9 @@ Config.setCrf(20);
 // Use EGL on Linux for headless GPU rendering (Nvidia T4), angle on Windows/Mac
 if (process.platform === 'linux') {
   Config.setChromiumOpenGlRenderer('egl');
+  Config.setChromiumMultiProcessOnLinux(true);
 } else {
   Config.setChromiumOpenGlRenderer('angle');
 }
+Config.setHardwareAcceleration('if-possible');
+

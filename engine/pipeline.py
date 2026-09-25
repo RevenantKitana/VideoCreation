@@ -297,7 +297,7 @@ def _render_scenes(vdir: Path, mode: str, durations: dict | None = None) -> dict
     todo = [i for i, sc in enumerate(s["scenes"]) if sc.get("type", "lesson") == "lesson"]
     if not todo:
         return {}
-    workers = max(1, min(len(todo), (os.cpu_count() or 4) // 2))
+    workers = max(1, min(len(todo), os.cpu_count() or 4))
     with ThreadPoolExecutor(workers) as ex:
         return dict(zip(todo, ex.map(one, todo)))
 
@@ -544,9 +544,10 @@ def render(vdir: Path, force: bool = False) -> Path:
     rdir = ROOT / "engine" / "remotion"
     npx = shutil.which("npx.cmd") or shutil.which("npx") or "npx"
     out = vdir / "final.mp4"
+    concurrency = max(2, min(8, os.cpu_count() or 4))
     cmd = [npx, "remotion", "render", "src/index.ts", "Lesson", str(out),
            f"--props={final / 'lesson.json'}", f"--public-dir={final}",
-           f"--concurrency={max(1, (os.cpu_count() or 4) // 2)}", "--log=error"]
+           f"--concurrency={concurrency}", "--log=error"]
     r = subprocess.run(cmd, cwd=rdir, capture_output=True, text=True, encoding="utf-8")
     if r.returncode != 0:
         raise RuntimeError("Remotion render failed:\n" + (r.stderr or r.stdout)[-3000:])

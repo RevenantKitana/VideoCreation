@@ -64,7 +64,7 @@ def main(job_path: str) -> None:
         subprocess.run([
             "ffmpeg", "-y", "-v", "error", "-i", str(movie),
             "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-b:v", "0", "-crf", "28",
-            "-row-mt", "1", "-auto-alt-ref", "0", "-speed", "2",
+            "-row-mt", "1", "-auto-alt-ref", "0", "-speed", "4",
             str(out) + ".webm",
         ], check=True)
     else:

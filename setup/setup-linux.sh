@@ -21,6 +21,11 @@ fi
 echo "== 2/5 Python, Manim, ffmpeg, Node, VieNeu (from the lockfile)"
 ./.tools/pixi install
 
+if command -v nvidia-smi &> /dev/null; then
+  echo "==> Phát hiện NVIDIA GPU (CUDA), đang cài đặt onnxruntime-gpu để tăng tốc AI..."
+  ./.tools/pixi run --manifest-path "$ROOT/pixi.toml" pip install onnxruntime-gpu --quiet || true
+fi
+
 echo "== 3/5 Remotion"
 ( cd engine/remotion && "$ROOT/.tools/pixi" run --manifest-path "$ROOT/pixi.toml" npm ci --no-audit --no-fund )
 ( cd engine/remotion && "$ROOT/.tools/pixi" run --manifest-path "$ROOT/pixi.toml" npx remotion browser ensure )
