@@ -1,0 +1,743 @@
+{
+  "voice": "Minh Quân Pro",
+  "lines": {
+    "s0.0": {
+      "say": "Giải nhanh phương trình x bình phương trừ năm x cộng sáu bằng không trong ba mươi giây.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 4.347,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Giải",
+          "start": 0.12,
+          "end": 0.26,
+          "score": 0.0
+        },
+        {
+          "text": "nhanh",
+          "start": 0.401,
+          "end": 0.541,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 0.581,
+          "end": 0.721,
+          "score": 0.0
+        },
+        {
+          "text": "trình",
+          "start": 0.761,
+          "end": 0.901,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 1.002,
+          "end": 1.062,
+          "score": -1.33
+        },
+        {
+          "text": "bình",
+          "start": 1.142,
+          "end": 1.262,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 1.302,
+          "end": 1.482,
+          "score": 0.0
+        },
+        {
+          "text": "trừ",
+          "start": 1.903,
+          "end": 1.983,
+          "score": 0.0
+        },
+        {
+          "text": "năm",
+          "start": 2.043,
+          "end": 2.123,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 2.264,
+          "end": 2.324,
+          "score": -3.59
+        },
+        {
+          "text": "cộng",
+          "start": 2.484,
+          "end": 2.604,
+          "score": 0.0
+        },
+        {
+          "text": "sáu",
+          "start": 2.704,
+          "end": 2.825,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 2.965,
+          "end": 3.085,
+          "score": 0.0
+        },
+        {
+          "text": "không",
+          "start": 3.205,
+          "end": 3.345,
+          "score": 0.0
+        },
+        {
+          "text": "trong",
+          "start": 3.506,
+          "end": 3.646,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 3.706,
+          "end": 3.786,
+          "score": 0.0
+        },
+        {
+          "text": "mươi",
+          "start": 3.866,
+          "end": 3.946,
+          "score": 0.0
+        },
+        {
+          "text": "giây.",
+          "start": 3.986,
+          "end": 4.107,
+          "score": 0.0
+        }
+      ]
+    },
+    "s0.1": {
+      "say": "Chúng ta sử dụng phương pháp phân tích đa thức thành nhân tử.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 2.586,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Chúng",
+          "start": 0.04,
+          "end": 0.18,
+          "score": 0.0
+        },
+        {
+          "text": "ta",
+          "start": 0.241,
+          "end": 0.301,
+          "score": 0.0
+        },
+        {
+          "text": "sử",
+          "start": 0.401,
+          "end": 0.481,
+          "score": 0.0
+        },
+        {
+          "text": "dụng",
+          "start": 0.541,
+          "end": 0.641,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 0.722,
+          "end": 0.862,
+          "score": 0.0
+        },
+        {
+          "text": "pháp",
+          "start": 0.922,
+          "end": 1.042,
+          "score": 0.0
+        },
+        {
+          "text": "phân",
+          "start": 1.142,
+          "end": 1.243,
+          "score": 0.0
+        },
+        {
+          "text": "tích",
+          "start": 1.323,
+          "end": 1.443,
+          "score": 0.0
+        },
+        {
+          "text": "đa",
+          "start": 1.523,
+          "end": 1.603,
+          "score": 0.0
+        },
+        {
+          "text": "thức",
+          "start": 1.704,
+          "end": 1.804,
+          "score": 0.0
+        },
+        {
+          "text": "thành",
+          "start": 1.944,
+          "end": 2.064,
+          "score": 0.0
+        },
+        {
+          "text": "nhân",
+          "start": 2.105,
+          "end": 2.225,
+          "score": 0.0
+        },
+        {
+          "text": "tử.",
+          "start": 2.265,
+          "end": 2.365,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.0": {
+      "say": "Tìm hai số có tích bằng sáu và có tổng bằng trừ năm.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 2.831,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Tìm",
+          "start": 0.02,
+          "end": 0.141,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.281,
+          "end": 0.381,
+          "score": 0.0
+        },
+        {
+          "text": "số",
+          "start": 0.502,
+          "end": 0.582,
+          "score": 0.0
+        },
+        {
+          "text": "có",
+          "start": 0.642,
+          "end": 0.723,
+          "score": 0.0
+        },
+        {
+          "text": "tích",
+          "start": 0.783,
+          "end": 0.903,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 0.984,
+          "end": 1.104,
+          "score": 0.0
+        },
+        {
+          "text": "sáu",
+          "start": 1.204,
+          "end": 1.325,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 1.706,
+          "end": 1.766,
+          "score": 0.0
+        },
+        {
+          "text": "có",
+          "start": 1.827,
+          "end": 1.887,
+          "score": 0.0
+        },
+        {
+          "text": "tổng",
+          "start": 1.967,
+          "end": 2.088,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 2.168,
+          "end": 2.288,
+          "score": 0.0
+        },
+        {
+          "text": "trừ",
+          "start": 2.349,
+          "end": 2.429,
+          "score": 0.0
+        },
+        {
+          "text": "năm.",
+          "start": 2.509,
+          "end": 2.59,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.1": {
+      "say": "Đó chính là trừ hai và trừ ba.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 1.722,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Đó",
+          "start": 0.04,
+          "end": 0.101,
+          "score": 0.0
+        },
+        {
+          "text": "chính",
+          "start": 0.182,
+          "end": 0.303,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 0.344,
+          "end": 0.404,
+          "score": 0.0
+        },
+        {
+          "text": "trừ",
+          "start": 0.505,
+          "end": 0.627,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.789,
+          "end": 0.93,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 1.031,
+          "end": 1.092,
+          "score": 0.0
+        },
+        {
+          "text": "trừ",
+          "start": 1.173,
+          "end": 1.274,
+          "score": 0.0
+        },
+        {
+          "text": "ba.",
+          "start": 1.355,
+          "end": 1.456,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.2": {
+      "say": "Phương trình được viết lại thành x trừ hai nhân x trừ ba bằng không.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 2.859,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Phương",
+          "start": 0.02,
+          "end": 0.181,
+          "score": 0.0
+        },
+        {
+          "text": "trình",
+          "start": 0.201,
+          "end": 0.342,
+          "score": 0.0
+        },
+        {
+          "text": "được",
+          "start": 0.382,
+          "end": 0.483,
+          "score": 0.0
+        },
+        {
+          "text": "viết",
+          "start": 0.523,
+          "end": 0.624,
+          "score": 0.0
+        },
+        {
+          "text": "lại",
+          "start": 0.664,
+          "end": 0.765,
+          "score": 0.0
+        },
+        {
+          "text": "thành",
+          "start": 0.845,
+          "end": 0.966,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 1.066,
+          "end": 1.127,
+          "score": -0.47
+        },
+        {
+          "text": "trừ",
+          "start": 1.187,
+          "end": 1.288,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 1.388,
+          "end": 1.489,
+          "score": 0.0
+        },
+        {
+          "text": "nhân",
+          "start": 1.65,
+          "end": 1.73,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 1.811,
+          "end": 1.871,
+          "score": -1.87
+        },
+        {
+          "text": "trừ",
+          "start": 1.972,
+          "end": 2.072,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 2.153,
+          "end": 2.253,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 2.354,
+          "end": 2.455,
+          "score": 0.0
+        },
+        {
+          "text": "không.",
+          "start": 2.495,
+          "end": 2.656,
+          "score": 0.0
+        }
+      ]
+    },
+    "s2.0": {
+      "say": "Tương đương x trừ hai bằng không hoặc x trừ ba bằng không.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 2.843,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Tương",
+          "start": 0.02,
+          "end": 0.141,
+          "score": -0.61
+        },
+        {
+          "text": "đương",
+          "start": 0.181,
+          "end": 0.302,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 0.383,
+          "end": 0.443,
+          "score": -3.24
+        },
+        {
+          "text": "trừ",
+          "start": 0.524,
+          "end": 0.625,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.705,
+          "end": 0.806,
+          "score": -1.24
+        },
+        {
+          "text": "bằng",
+          "start": 0.866,
+          "end": 0.967,
+          "score": 0.0
+        },
+        {
+          "text": "không",
+          "start": 1.027,
+          "end": 1.168,
+          "score": -0.0
+        },
+        {
+          "text": "hoặc",
+          "start": 1.551,
+          "end": 1.652,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 1.753,
+          "end": 1.833,
+          "score": -3.7
+        },
+        {
+          "text": "trừ",
+          "start": 1.914,
+          "end": 2.015,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 2.115,
+          "end": 2.196,
+          "score": -0.16
+        },
+        {
+          "text": "bằng",
+          "start": 2.297,
+          "end": 2.397,
+          "score": 0.0
+        },
+        {
+          "text": "không.",
+          "start": 2.478,
+          "end": 2.619,
+          "score": 0.0
+        }
+      ]
+    },
+    "s2.1": {
+      "say": "Vậy phương trình có hai nghiệm phân biệt là x bằng hai và x bằng ba.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.138,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Vậy",
+          "start": 0.06,
+          "end": 0.161,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 0.201,
+          "end": 0.342,
+          "score": 0.0
+        },
+        {
+          "text": "trình",
+          "start": 0.382,
+          "end": 0.523,
+          "score": -0.07
+        },
+        {
+          "text": "có",
+          "start": 0.583,
+          "end": 0.643,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.704,
+          "end": 0.804,
+          "score": 0.0
+        },
+        {
+          "text": "nghiệm",
+          "start": 0.844,
+          "end": 0.985,
+          "score": -1.67
+        },
+        {
+          "text": "phân",
+          "start": 1.025,
+          "end": 1.146,
+          "score": 0.0
+        },
+        {
+          "text": "biệt",
+          "start": 1.226,
+          "end": 1.347,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 1.669,
+          "end": 1.729,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 1.85,
+          "end": 1.91,
+          "score": -2.15
+        },
+        {
+          "text": "bằng",
+          "start": 2.01,
+          "end": 2.131,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 2.211,
+          "end": 2.332,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 2.433,
+          "end": 2.493,
+          "score": 0.0
+        },
+        {
+          "text": "x",
+          "start": 2.573,
+          "end": 2.634,
+          "score": -1.18
+        },
+        {
+          "text": "bằng",
+          "start": 2.654,
+          "end": 2.774,
+          "score": 0.0
+        },
+        {
+          "text": "ba.",
+          "start": 2.815,
+          "end": 2.915,
+          "score": 0.0
+        }
+      ]
+    },
+    "s3.0": {
+      "say": "Phương pháp nhẩm nghiệm theo tích và tổng giúp giải nhanh phương trình bậc hai.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.083,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Phương",
+          "start": 0.02,
+          "end": 0.161,
+          "score": 0.0
+        },
+        {
+          "text": "pháp",
+          "start": 0.181,
+          "end": 0.282,
+          "score": 0.0
+        },
+        {
+          "text": "nhẩm",
+          "start": 0.342,
+          "end": 0.443,
+          "score": 0.0
+        },
+        {
+          "text": "nghiệm",
+          "start": 0.483,
+          "end": 0.644,
+          "score": 0.0
+        },
+        {
+          "text": "theo",
+          "start": 0.745,
+          "end": 0.866,
+          "score": 0.0
+        },
+        {
+          "text": "tích",
+          "start": 0.967,
+          "end": 1.087,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 1.128,
+          "end": 1.188,
+          "score": 0.0
+        },
+        {
+          "text": "tổng",
+          "start": 1.269,
+          "end": 1.389,
+          "score": 0.0
+        },
+        {
+          "text": "giúp",
+          "start": 1.651,
+          "end": 1.752,
+          "score": 0.0
+        },
+        {
+          "text": "giải",
+          "start": 1.812,
+          "end": 1.913,
+          "score": 0.0
+        },
+        {
+          "text": "nhanh",
+          "start": 1.994,
+          "end": 2.114,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 2.155,
+          "end": 2.296,
+          "score": 0.0
+        },
+        {
+          "text": "trình",
+          "start": 2.336,
+          "end": 2.477,
+          "score": 0.0
+        },
+        {
+          "text": "bậc",
+          "start": 2.537,
+          "end": 2.618,
+          "score": 0.0
+        },
+        {
+          "text": "hai.",
+          "start": 2.698,
+          "end": 2.819,
+          "score": 0.0
+        }
+      ]
+    }
+  }
+}
