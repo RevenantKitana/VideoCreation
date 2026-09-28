@@ -59,14 +59,38 @@ def main(job_path: str) -> None:
         movie = Path(scene.renderer.file_writer.movie_file_path)
 
     if final:
-        # Remotion cannot decode Manim's QuickTime; VP9 WebM keeps alpha and it can.
-        # -auto-alt-ref 0 is required or libvpx silently drops the alpha plane.
-        subprocess.run([
-            "ffmpeg", "-y", "-v", "error", "-i", str(movie),
-            "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-b:v", "0", "-crf", "28",
-            "-row-mt", "1", "-auto-alt-ref", "0", "-speed", "4",
-            str(out) + ".webm",
-        ], check=True)
+        ffmpeg_bin = shutil.which("ffmpeg") or "ffmpeg"
+        has_vpx = False
+        try:
+            r = subprocess.run([ffmpeg_bin, "-encoders"], capture_output=True, text=True)
+            has_vpx = "libvpx-vp9" in (r.stdout or "")
+        except Exception:
+            pass
+
+        out_webm = str(out) + ".webm"
+        if has_vpx:
+            subprocess.run([
+                ffmpeg_bin, "-y", "-v", "error", "-i", str(movie),
+                "-c:v", "libvpx-vp9", "-pix_fmt", "yuva420p", "-b:v", "0", "-crf", "28",
+                "-row-mt", "1", "-auto-alt-ref", "0", "-cpu-used", "4",
+                out_webm,
+            ], check=True)
+        else:
+            # Fallback for platforms without libvpx-vp9
+            converted = False
+            for encoder, pix_fmt in (("libaom-av1", "yuva420p"), ("png", "rgba")):
+                try:
+                    subprocess.run([
+                        ffmpeg_bin, "-y", "-v", "error", "-i", str(movie),
+                        "-c:v", encoder, "-pix_fmt", pix_fmt,
+                        out_webm,
+                    ], check=True, capture_output=True)
+                    converted = True
+                    break
+                except Exception:
+                    continue
+            if not converted:
+                shutil.copy(movie, out_webm)
     else:
         shutil.copy(movie, str(out) + ".mp4")
     shutil.rmtree(media, ignore_errors=True)
