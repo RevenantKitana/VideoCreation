@@ -25,9 +25,9 @@ echo "== 2/5 Python, Manim, ffmpeg, Node, VieNeu (from the lockfile)"
 ./.tools/pixi install
 
 if command -v nvidia-smi &> /dev/null; then
-  echo "==> Phát hiện NVIDIA GPU (CUDA), đang cấu hình onnxruntime-gpu và nvidia-cudnn..."
+  echo "==> Phát hiện NVIDIA GPU (CUDA), đang cấu hình onnxruntime-gpu..."
   rm -rf .pixi/envs/default/lib/python*/site-packages/onnxruntime* || true
-  ./.tools/pixi run --manifest-path "$ROOT/pixi.toml" pip install --no-cache-dir --force-reinstall onnxruntime-gpu nvidia-cudnn-cu12 nvidia-cuda-runtime-cu12 nvidia-cublas-cu12 --quiet || true
+  ./.tools/pixi run --manifest-path "$ROOT/pixi.toml" pip install --no-cache-dir onnxruntime-gpu --no-deps --quiet
 fi
 
 echo "== 3/5 Remotion"
