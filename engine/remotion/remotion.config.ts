@@ -8,8 +8,16 @@ Config.setCrf(20);
 if (process.platform === 'linux') {
   Config.setChromiumOpenGlRenderer('egl');
   Config.setChromiumMultiProcessOnLinux(true);
+  Config.setChromiumFlags([
+    '--no-sandbox',
+    '--disable-setuid-sandbox',
+    '--ignore-gpu-blocklist',
+    '--enable-gpu-rasterization',
+    '--enable-zero-copy',
+  ]);
 } else {
   Config.setChromiumOpenGlRenderer('angle');
 }
 Config.setHardwareAcceleration('if-possible');
+
 

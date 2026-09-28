@@ -22,7 +22,8 @@ echo "== 2/5 Python, Manim, ffmpeg, Node, VieNeu (from the lockfile)"
 ./.tools/pixi install
 
 if command -v nvidia-smi &> /dev/null; then
-  echo "==> Phát hiện NVIDIA GPU (CUDA), đang cài đặt onnxruntime-gpu để tăng tốc AI..."
+  echo "==> Phát hiện NVIDIA GPU (CUDA), đang cấu hình onnxruntime-gpu để ưu tiên GPU..."
+  ./.tools/pixi run --manifest-path "$ROOT/pixi.toml" pip uninstall -y onnxruntime onnxruntime-gpu --quiet || true
   ./.tools/pixi run --manifest-path "$ROOT/pixi.toml" pip install onnxruntime-gpu --quiet || true
 fi
 

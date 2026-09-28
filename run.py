@@ -85,6 +85,19 @@ def cmd_doctor(_args):
     row("English voices (Kokoro)", (ROOT / "models/kokoro/voices-v1.0.bin").exists(), "run setup once with internet")
     row("English checker", any((ROOT / "models/hf").glob("hub/models--Xenova--wav2vec2-base-960h")),
         "run setup once with internet")
+    
+    print("Acceleration & Device")
+    try:
+        import onnxruntime as ort
+        providers = ort.get_available_providers()
+        has_cuda = "CUDAExecutionProvider" in providers
+        row(f"ONNX Execution ({', '.join(p.replace('ExecutionProvider', '') for p in providers)})", True)
+        if has_cuda:
+            row("NVIDIA CUDA GPU AI acceleration", True)
+        else:
+            row("NVIDIA CUDA GPU (optional)", True, "running on CPU mode")
+    except Exception:
+        pass
     print("\nREADY" if ok else "\nNOT READY — run setup/setup-mac.command or setup\\setup-windows.bat")
     return 0 if ok else 1
 
