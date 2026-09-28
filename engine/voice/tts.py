@@ -59,6 +59,9 @@ def kokoro():
     if _kokoro is None:
         import espeakng_loader
         import kokoro_onnx
+        import onnxruntime as ort
+        if "CUDAExecutionProvider" in ort.get_available_providers():
+            os.environ["ONNX_PROVIDER"] = "CUDAExecutionProvider"
         cfg = kokoro_onnx.EspeakConfig(lib_path=espeakng_loader.get_library_path(), data_path=_espeak_data())
         _kokoro = kokoro_onnx.Kokoro(str(KOKORO_DIR / "kokoro-v1.0.onnx"), str(KOKORO_DIR / "voices-v1.0.bin"),
                                      espeak_config=cfg)
