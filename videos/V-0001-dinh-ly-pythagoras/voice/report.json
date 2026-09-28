@@ -1,0 +1,692 @@
+{
+  "voice": "Minh Quân Pro",
+  "lines": {
+    "s0.0": {
+      "say": "Trong tam giác vuông, bình phương cạnh huyền bằng tổng bình phương hai cạnh góc vuông.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.51,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Trong",
+          "start": 0.04,
+          "end": 0.16,
+          "score": 0.0
+        },
+        {
+          "text": "tam",
+          "start": 0.201,
+          "end": 0.301,
+          "score": 0.0
+        },
+        {
+          "text": "giác",
+          "start": 0.361,
+          "end": 0.461,
+          "score": 0.0
+        },
+        {
+          "text": "vuông,",
+          "start": 0.521,
+          "end": 0.682,
+          "score": 0.0
+        },
+        {
+          "text": "bình",
+          "start": 0.822,
+          "end": 0.923,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 0.963,
+          "end": 1.123,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 1.163,
+          "end": 1.283,
+          "score": 0.0
+        },
+        {
+          "text": "huyền",
+          "start": 1.324,
+          "end": 1.444,
+          "score": -0.12
+        },
+        {
+          "text": "bằng",
+          "start": 1.644,
+          "end": 1.765,
+          "score": 0.0
+        },
+        {
+          "text": "tổng",
+          "start": 1.825,
+          "end": 1.945,
+          "score": 0.0
+        },
+        {
+          "text": "bình",
+          "start": 2.005,
+          "end": 2.126,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 2.166,
+          "end": 2.346,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 2.687,
+          "end": 2.788,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 2.848,
+          "end": 2.948,
+          "score": 0.0
+        },
+        {
+          "text": "góc",
+          "start": 2.988,
+          "end": 3.088,
+          "score": -0.7
+        },
+        {
+          "text": "vuông.",
+          "start": 3.129,
+          "end": 3.309,
+          "score": 0.0
+        }
+      ]
+    },
+    "s0.1": {
+      "say": "Với a và b là hai cạnh góc vuông, còn c là cạnh huyền.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.056,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Với",
+          "start": 0.08,
+          "end": 0.161,
+          "score": 0.0
+        },
+        {
+          "text": "a",
+          "start": 0.322,
+          "end": 0.342,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 0.422,
+          "end": 0.502,
+          "score": 0.0
+        },
+        {
+          "text": "b",
+          "start": 0.563,
+          "end": 0.643,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 0.804,
+          "end": 0.864,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.965,
+          "end": 1.085,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 1.186,
+          "end": 1.306,
+          "score": 0.0
+        },
+        {
+          "text": "góc",
+          "start": 1.387,
+          "end": 1.467,
+          "score": 0.0
+        },
+        {
+          "text": "vuông,",
+          "start": 1.568,
+          "end": 1.749,
+          "score": 0.0
+        },
+        {
+          "text": "còn",
+          "start": 2.01,
+          "end": 2.11,
+          "score": 0.0
+        },
+        {
+          "text": "c",
+          "start": 2.231,
+          "end": 2.311,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 2.412,
+          "end": 2.472,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 2.532,
+          "end": 2.653,
+          "score": 0.0
+        },
+        {
+          "text": "huyền.",
+          "start": 2.713,
+          "end": 2.854,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.0": {
+      "say": "Cho tam giác vuông có hai cạnh góc vuông bằng ba và bốn. Tìm cạnh huyền c.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.931,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Cho",
+          "start": 0.04,
+          "end": 0.12,
+          "score": 0.0
+        },
+        {
+          "text": "tam",
+          "start": 0.18,
+          "end": 0.261,
+          "score": 0.0
+        },
+        {
+          "text": "giác",
+          "start": 0.341,
+          "end": 0.441,
+          "score": 0.0
+        },
+        {
+          "text": "vuông",
+          "start": 0.501,
+          "end": 0.682,
+          "score": 0.0
+        },
+        {
+          "text": "có",
+          "start": 0.742,
+          "end": 0.802,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 0.902,
+          "end": 1.003,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 1.063,
+          "end": 1.183,
+          "score": 0.0
+        },
+        {
+          "text": "góc",
+          "start": 1.243,
+          "end": 1.343,
+          "score": 0.0
+        },
+        {
+          "text": "vuông",
+          "start": 1.424,
+          "end": 1.604,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 1.744,
+          "end": 1.865,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 1.965,
+          "end": 2.065,
+          "score": 0.0
+        },
+        {
+          "text": "và",
+          "start": 2.186,
+          "end": 2.246,
+          "score": 0.0
+        },
+        {
+          "text": "bốn.",
+          "start": 2.326,
+          "end": 2.426,
+          "score": 0.0
+        },
+        {
+          "text": "Tìm",
+          "start": 2.947,
+          "end": 3.068,
+          "score": 0.0
+        },
+        {
+          "text": "cạnh",
+          "start": 3.128,
+          "end": 3.248,
+          "score": 0.0
+        },
+        {
+          "text": "huyền",
+          "start": 3.328,
+          "end": 3.429,
+          "score": 0.0
+        },
+        {
+          "text": "c.",
+          "start": 3.549,
+          "end": 3.669,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.1": {
+      "say": "Áp dụng định lý, ta có c bình phương bằng ba bình phương cộng bốn bình phương.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 4.007,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Áp",
+          "start": 0.1,
+          "end": 0.14,
+          "score": 0.0
+        },
+        {
+          "text": "dụng",
+          "start": 0.22,
+          "end": 0.32,
+          "score": 0.0
+        },
+        {
+          "text": "định",
+          "start": 0.381,
+          "end": 0.501,
+          "score": 0.0
+        },
+        {
+          "text": "lý,",
+          "start": 0.561,
+          "end": 0.661,
+          "score": 0.0
+        },
+        {
+          "text": "ta",
+          "start": 0.861,
+          "end": 0.941,
+          "score": 0.0
+        },
+        {
+          "text": "có",
+          "start": 1.002,
+          "end": 1.082,
+          "score": 0.0
+        },
+        {
+          "text": "c",
+          "start": 1.162,
+          "end": 1.242,
+          "score": 0.0
+        },
+        {
+          "text": "bình",
+          "start": 1.322,
+          "end": 1.442,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 1.502,
+          "end": 1.683,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 2.103,
+          "end": 2.243,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 2.324,
+          "end": 2.424,
+          "score": 0.0
+        },
+        {
+          "text": "bình",
+          "start": 2.504,
+          "end": 2.624,
+          "score": 0.0
+        },
+        {
+          "text": "phương",
+          "start": 2.724,
+          "end": 2.924,
+          "score": 0.0
+        },
+        {
+          "text": "cộng",
+          "start": 3.045,
+          "end": 3.145,
+          "score": 0.0
+        },
+        {
+          "text": "bốn",
+          "start": 3.245,
+          "end": 3.345,
+          "score": 0.0
+        },
+        {
+          "text": "bình",
+          "start": 3.425,
+          "end": 3.545,
+          "score": 0.0
+        },
+        {
+          "text": "phương.",
+          "start": 3.606,
+          "end": 3.786,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.2": {
+      "say": "Bằng chín cộng mười sáu, bằng hai mươi lăm.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 2.158,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Bằng",
+          "start": 0.06,
+          "end": 0.181,
+          "score": 0.0
+        },
+        {
+          "text": "chín",
+          "start": 0.262,
+          "end": 0.383,
+          "score": 0.0
+        },
+        {
+          "text": "cộng",
+          "start": 0.463,
+          "end": 0.584,
+          "score": 0.0
+        },
+        {
+          "text": "mười",
+          "start": 0.685,
+          "end": 0.806,
+          "score": 0.0
+        },
+        {
+          "text": "sáu,",
+          "start": 0.907,
+          "end": 1.027,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 1.37,
+          "end": 1.491,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 1.571,
+          "end": 1.672,
+          "score": 0.0
+        },
+        {
+          "text": "mươi",
+          "start": 1.692,
+          "end": 1.793,
+          "score": 0.0
+        },
+        {
+          "text": "lăm.",
+          "start": 1.813,
+          "end": 1.914,
+          "score": 0.0
+        }
+      ]
+    },
+    "s1.3": {
+      "say": "Suy ra cạnh huyền c bằng căn bậc hai của hai mươi lăm, tức là bằng năm.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.773,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Suy",
+          "start": 0.1,
+          "end": 0.181,
+          "score": 0.0
+        },
+        {
+          "text": "ra",
+          "start": 0.241,
+          "end": 0.321,
+          "score": -0.44
+        },
+        {
+          "text": "cạnh",
+          "start": 0.381,
+          "end": 0.502,
+          "score": 0.0
+        },
+        {
+          "text": "huyền",
+          "start": 0.542,
+          "end": 0.642,
+          "score": 0.0
+        },
+        {
+          "text": "c",
+          "start": 0.763,
+          "end": 0.863,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 1.003,
+          "end": 1.104,
+          "score": 0.0
+        },
+        {
+          "text": "căn",
+          "start": 1.184,
+          "end": 1.284,
+          "score": 0.0
+        },
+        {
+          "text": "bậc",
+          "start": 1.364,
+          "end": 1.445,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 1.545,
+          "end": 1.665,
+          "score": 0.0
+        },
+        {
+          "text": "của",
+          "start": 1.826,
+          "end": 1.926,
+          "score": 0.0
+        },
+        {
+          "text": "hai",
+          "start": 2.007,
+          "end": 2.087,
+          "score": 0.0
+        },
+        {
+          "text": "mươi",
+          "start": 2.127,
+          "end": 2.227,
+          "score": 0.0
+        },
+        {
+          "text": "lăm,",
+          "start": 2.247,
+          "end": 2.348,
+          "score": 0.0
+        },
+        {
+          "text": "tức",
+          "start": 2.849,
+          "end": 2.95,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 3.03,
+          "end": 3.11,
+          "score": 0.0
+        },
+        {
+          "text": "bằng",
+          "start": 3.271,
+          "end": 3.371,
+          "score": 0.0
+        },
+        {
+          "text": "năm.",
+          "start": 3.431,
+          "end": 3.532,
+          "score": 0.0
+        }
+      ]
+    },
+    "s2.0": {
+      "say": "Bộ ba số 3, 4, 5 là bộ ba Pythagoras kinh điển cần nhớ.",
+      "status": "ok",
+      "problem_words": [],
+      "duration": 3.488,
+      "takes": 1,
+      "words": [
+        {
+          "text": "Bộ",
+          "start": 0.04,
+          "end": 0.1,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 0.18,
+          "end": 0.261,
+          "score": 0.0
+        },
+        {
+          "text": "số",
+          "start": 0.341,
+          "end": 0.421,
+          "score": 0.0
+        },
+        {
+          "text": "3,",
+          "start": 0.481,
+          "end": 0.561,
+          "score": 0.0
+        },
+        {
+          "text": "4,",
+          "start": 0.681,
+          "end": 0.782,
+          "score": 0.0
+        },
+        {
+          "text": "5",
+          "start": 1.102,
+          "end": 1.182,
+          "score": 0.0
+        },
+        {
+          "text": "là",
+          "start": 1.323,
+          "end": 1.383,
+          "score": 0.0
+        },
+        {
+          "text": "bộ",
+          "start": 1.463,
+          "end": 1.523,
+          "score": 0.0
+        },
+        {
+          "text": "ba",
+          "start": 1.643,
+          "end": 1.723,
+          "score": 0.0
+        },
+        {
+          "text": "Pythagoras",
+          "start": 1.884,
+          "end": 2.405,
+          "score": -2.59
+        },
+        {
+          "text": "kinh",
+          "start": 2.565,
+          "end": 2.685,
+          "score": 0.0
+        },
+        {
+          "text": "điển",
+          "start": 2.745,
+          "end": 2.846,
+          "score": 0.0
+        },
+        {
+          "text": "cần",
+          "start": 2.946,
+          "end": 3.046,
+          "score": 0.0
+        },
+        {
+          "text": "nhớ.",
+          "start": 3.106,
+          "end": 3.226,
+          "score": 0.0
+        }
+      ]
+    }
+  }
+}

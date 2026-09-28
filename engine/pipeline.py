@@ -298,6 +298,7 @@ def _render_scenes(vdir: Path, mode: str, durations: dict | None = None) -> dict
     if not todo:
         return {}
     workers = max(1, min(len(todo), os.cpu_count() or 4))
+    print(f"  [Manim Graphics] Render {len(todo)} cảnh ({mode}) — Phân bổ {workers} luồng CPU song song...")
     with ThreadPoolExecutor(workers) as ex:
         return dict(zip(todo, ex.map(one, todo)))
 
@@ -545,6 +546,7 @@ def render(vdir: Path, force: bool = False) -> Path:
     npx = shutil.which("npx.cmd") or shutil.which("npx") or "npx"
     out = vdir / "final.mp4"
     concurrency = max(2, min(8, os.cpu_count() or 4))
+    print(f"  [Remotion Engine] Ghép video & hiệu ứng chữ Karaoke (concurrency={concurrency}, Headless Chromium)...")
     cmd = [npx, "remotion", "render", "src/index.ts", "Lesson", str(out),
            f"--props={final / 'lesson.json'}", f"--public-dir={final}",
            f"--concurrency={concurrency}", "--log=error"]

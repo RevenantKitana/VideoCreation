@@ -62,14 +62,52 @@ def kokoro():
         cfg = kokoro_onnx.EspeakConfig(lib_path=espeakng_loader.get_library_path(), data_path=_espeak_data())
         _kokoro = kokoro_onnx.Kokoro(str(KOKORO_DIR / "kokoro-v1.0.onnx"), str(KOKORO_DIR / "voices-v1.0.bin"),
                                      espeak_config=cfg)
+        provs = _kokoro.session.get_providers() if hasattr(_kokoro, 'session') and _kokoro.session.get_providers() else []
+        active_prov = provs[0] if provs else "CPUExecutionProvider"
+        dev_tag = "⚡ GPU (CUDA)" if "CUDA" in active_prov else "💻 CPU"
+        print(f"  [Kokoro-TTS] Đang nạp mô hình vào: {dev_tag} ({active_prov})")
     return _kokoro
+
+
+def _patch_vieneu_gpu():
+    """If CUDAExecutionProvider is available in ONNX Runtime, ensure VieNeu runs on GPU."""
+    try:
+        import onnxruntime as ort
+        available = ort.get_available_providers()
+        if "CUDAExecutionProvider" in available:
+            import vieneu._v3_turbo_engine.onnx_runtime_lite as lite_mod
+            _orig_init = lite_mod.OnnxV3LiteEngine.__init__
+
+            def _gpu_init(self, *args, **kwargs):
+                _orig_session = ort.InferenceSession
+
+                def _session_with_gpu(path_or_bytes, *s_args, providers=None, **s_kwargs):
+                    if providers == ["CPUExecutionProvider"]:
+                        providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+                    return _orig_session(path_or_bytes, *s_args, providers=providers, **s_kwargs)
+
+                ort.InferenceSession = _session_with_gpu
+                try:
+                    return _orig_init(self, *args, **kwargs)
+                finally:
+                    ort.InferenceSession = _orig_session
+
+            lite_mod.OnnxV3LiteEngine.__init__ = _gpu_init
+    except Exception:
+        pass
 
 
 def engine():
     global _engine
     if _engine is None:
+        _patch_vieneu_gpu()
         from vieneu import Vieneu
         _engine = Vieneu()
+        if hasattr(_engine, 'engine') and hasattr(_engine.engine, 'sess_pre'):
+            provs = _engine.engine.sess_pre.get_providers()
+            active_prov = provs[0] if provs else "CPUExecutionProvider"
+            dev_tag = "⚡ GPU (CUDA)" if "CUDA" in active_prov else "💻 CPU"
+            print(f"  [VieNeu-TTS] Đang nạp mô hình vào: {dev_tag} ({active_prov})")
     return _engine
 
 

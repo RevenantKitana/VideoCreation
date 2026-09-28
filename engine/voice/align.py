@@ -76,6 +76,11 @@ def _load(lang: str = "vi"):
             vocab = json.loads((MODEL_DIR / "vi_ctc.vocab.json").read_text(encoding="utf-8"))
             sess = ort.InferenceSession(str(MODEL_DIR / "vi_ctc.onnx"), so, providers=providers)
             _MODELS[lang] = (vocab, sess, "audio", False, False)
+        
+        provs = sess.get_providers()
+        active_prov = provs[0] if provs else "CPUExecutionProvider"
+        dev_tag = "⚡ GPU (CUDA)" if "CUDA" in active_prov else "💻 CPU"
+        print(f"  [Aligner ({lang})] Đang nạp mô hình vào: {dev_tag} ({active_prov})")
     return _MODELS[lang]
 
 
