@@ -8,7 +8,6 @@ Config.setCrf(20);
 if (process.platform === 'linux') {
   Config.setChromiumOpenGlRenderer('egl');
   Config.setChromiumMultiProcessOnLinux(true);
-  Config.setChromiumSandbox(false);
 } else {
   Config.setChromiumOpenGlRenderer('angle');
 }
