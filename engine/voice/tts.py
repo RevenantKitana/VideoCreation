@@ -13,6 +13,7 @@ video after a visual tweak costs no synthesis at all.
 from __future__ import annotations
 
 import hashlib
+import os
 from pathlib import Path
 
 import numpy as np
@@ -59,13 +60,20 @@ def kokoro():
     if _kokoro is None:
         import espeakng_loader
         import kokoro_onnx
+        import kokoro_onnx.session
         import onnxruntime as ort
-        if "CUDAExecutionProvider" in ort.get_available_providers():
-            os.environ["ONNX_PROVIDER"] = "CUDAExecutionProvider"
+
+        available = ort.get_available_providers()
+        providers = ["CUDAExecutionProvider", "CPUExecutionProvider"] if "CUDAExecutionProvider" in available else ["CPUExecutionProvider"]
+        
+        # Override create_session so it uses CUDA when available, falling back to CPU
+        kokoro_onnx.session.create_session = lambda model_path: ort.InferenceSession(model_path, providers=providers)
+
         cfg = kokoro_onnx.EspeakConfig(lib_path=espeakng_loader.get_library_path(), data_path=_espeak_data())
         _kokoro = kokoro_onnx.Kokoro(str(KOKORO_DIR / "kokoro-v1.0.onnx"), str(KOKORO_DIR / "voices-v1.0.bin"),
                                      espeak_config=cfg)
-        provs = _kokoro.session.get_providers() if hasattr(_kokoro, 'session') and _kokoro.session.get_providers() else []
+        sess = getattr(_kokoro, 'sess', getattr(_kokoro, 'session', None))
+        provs = sess.get_providers() if sess else []
         active_prov = provs[0] if provs else "CPUExecutionProvider"
         dev_tag = "⚡ GPU (CUDA)" if "CUDA" in active_prov else "💻 CPU"
         print(f"  [Kokoro-TTS] Đang nạp mô hình vào: {dev_tag} ({active_prov})")
