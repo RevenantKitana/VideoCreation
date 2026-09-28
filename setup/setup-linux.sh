@@ -17,6 +17,9 @@ if [ ! -x .tools/pixi ]; then
   curl -fsSL "https://github.com/prefix-dev/pixi/releases/latest/download/pixi-$ARCH.tar.gz" | tar -xz -C .tools
   chmod +x .tools/pixi
 fi
+chmod +x os || true
+
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:/usr/local/cuda-12/lib64:/usr/local/cuda/targets/x86_64-linux/lib:/usr/lib/x86_64-linux-gnu:/usr/local/nvidia/lib64:/usr/local/nvidia/lib:${LD_LIBRARY_PATH:-}"
 
 echo "== 2/5 Python, Manim, ffmpeg, Node, VieNeu (from the lockfile)"
 ./.tools/pixi install
@@ -29,7 +32,7 @@ fi
 
 echo "== 3/5 Remotion"
 ( cd engine/remotion && "$ROOT/.tools/pixi" run --manifest-path "$ROOT/pixi.toml" npm ci --no-audit --no-fund )
-( cd engine/remotion && "$ROOT/.tools/pixi" run --manifest-path "$ROOT/pixi.toml" npx remotion browser ensure )
+( cd engine/remotion && "$ROOT/.tools/pixi" run --manifest-path "$ROOT/pixi.toml" npx remotion browser ensure ) || true
 
 echo "== 4/5 Voice models (downloaded once into models/)"
 ./.tools/pixi run python run.py warmup

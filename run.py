@@ -39,6 +39,29 @@ ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
 import os
+import glob
+import ctypes
+
+# On Linux (Google Colab / VPS), ensure dynamic linker pre-loads CUDA libraries into global symbols
+if sys.platform == "linux":
+    cuda_candidates = [
+        "/usr/local/cuda/lib64",
+        "/usr/local/cuda/targets/x86_64-linux/lib",
+        "/usr/local/cuda-12/lib64",
+        "/usr/lib/x86_64-linux-gnu",
+        "/usr/local/nvidia/lib64",
+        "/usr/local/nvidia/lib",
+    ]
+    for sp in [p for p in sys.path if "site-packages" in p]:
+        cuda_candidates.extend(glob.glob(os.path.join(sp, "nvidia", "*", "lib")))
+    for cdir in cuda_candidates:
+        if os.path.isdir(cdir):
+            for lib_name in ("libcudart.so*", "libcublas.so*", "libcublasLt.so*", "libcudnn.so*", "libcufft.so*"):
+                for match in glob.glob(os.path.join(cdir, lib_name)):
+                    try:
+                        ctypes.CDLL(match, mode=ctypes.RTLD_GLOBAL)
+                    except Exception:
+                        pass
 
 # Set Hugging Face environment variables to point directly to models/hf
 hf_dir = ROOT / "models" / "hf"
@@ -106,9 +129,15 @@ def cmd_doctor(_args):
         has_cuda = "CUDAExecutionProvider" in providers
         row(f"ONNX Execution ({', '.join(p.replace('ExecutionProvider', '') for p in providers)})", True)
         if has_cuda:
-            row("NVIDIA CUDA GPU AI acceleration", True)
+            row("NVIDIA CUDA GPU AI acceleration (CUDAExecutionProvider)", True)
         else:
-            row("NVIDIA CUDA GPU (optional)", True, "running on CPU mode")
+            cuda_hint = "running on CPU mode"
+            if shutil.which("nvidia-smi"):
+                try:
+                    ort.InferenceSession(str(ROOT / "models/aligner/vi_ctc.onnx"), providers=["CUDAExecutionProvider"])
+                except Exception as e:
+                    cuda_hint = f"GPU detected but CUDA provider failed: {e}"
+            row("NVIDIA CUDA GPU (optional)", True, cuda_hint)
     except Exception:
         pass
     print("\nREADY" if ok else "\nNOT READY — run setup/setup-mac.command or setup\\setup-windows.bat")
