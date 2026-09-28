@@ -38,10 +38,23 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 sys.path.insert(0, str(ROOT))
 
-# Local-only rule (AGENTS.md §3.1): only setup's `warmup` may download models. Every other
-# verb runs with Hugging Face forced offline — set before anything imports huggingface_hub.
-import os  # noqa: E402
-os.environ["HF_HUB_OFFLINE"] = "0" if sys.argv[1:2] == ["warmup"] else "1"
+import os
+
+# Set Hugging Face environment variables to point directly to models/hf
+hf_dir = ROOT / "models" / "hf"
+hf_dir.mkdir(parents=True, exist_ok=True)
+os.environ["HF_HOME"] = str(hf_dir)
+os.environ["HF_HUB_DISABLE_SYMLINKS"] = "1"
+os.environ["HF_HUB_DISABLE_SYMLINKS_WARNING"] = "1"
+os.environ["HF_HUB_DISABLE_TELEMETRY"] = "1"
+
+# Local-only rule (AGENTS.md §3.1): only setup's `warmup` may download models.
+# If models are not yet cached (e.g. fresh clone / Colab run), allow downloading on first use.
+has_vieneu = any((hf_dir / "hub").glob("models--pnnbao-ump--VieNeu*")) if (hf_dir / "hub").exists() else False
+if sys.argv[1:2] == ["warmup"] or not has_vieneu:
+    os.environ["HF_HUB_OFFLINE"] = "0"
+else:
+    os.environ["HF_HUB_OFFLINE"] = os.environ.get("HF_HUB_OFFLINE", "1")
 
 from engine import pipeline  # noqa: E402
 from engine.pipeline import CONSENT, consent_signed  # noqa: E402
